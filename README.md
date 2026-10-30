@@ -31,7 +31,7 @@ Guarda los carruseles que te gustan como **estilos** y replícalos con otros tem
 
 👉 **[Guía de instalación paso a paso](INSTALACION.md)**, para cualquier persona, sin necesidad de programar.
 
-- **Claude.ai:** descarga `clonar-carrusel.zip` desde [Releases](https://github.com/contenido-wq/clonar-carrusel/releases/latest) y súbelo en *Configuración → Capacidades → Skills*.
+- **Claude.ai:** descarga [`clonar-carrusel.zip`](https://github.com/contenido-wq/clonar-carrusel/raw/main/dist/clonar-carrusel.zip) y súbelo en *Configuración → Capacidades → Skills*.
 - **Claude Code:**
   ```bash
   git clone https://github.com/contenido-wq/clonar-carrusel ~/.claude/skills/clonar-carrusel
@@ -63,6 +63,7 @@ scripts/
   comparar.py             # hoja de comparación original contra nuevo
   estilos.py              # guardar, listar, catálogo, rendimiento y ranking de estilos
 evals/                    # casos de prueba (formato de `claude plugin eval`)
+dist/clonar-carrusel.zip  # la skill empaquetada para subir a Claude.ai
 ```
 
 Lo que generas queda en `carruseles/` (perfil, proyectos y biblioteca de estilos), y esa carpeta está ignorada por git.

@@ -13,10 +13,10 @@ Elige el camino según cómo usas Claude. Si no sabes cuál, empieza por la **Op
 ## Opción A: Claude.ai (sin programar)
 
 ### 1. Descarga la skill
-1. Entra a la página de [descargas (Releases)](https://github.com/contenido-wq/clonar-carrusel/releases/latest).
-2. Descarga el archivo **`clonar-carrusel.zip`**. No lo descomprimas.
+1. Descarga **[clonar-carrusel.zip](https://github.com/contenido-wq/clonar-carrusel/raw/main/dist/clonar-carrusel.zip)** (se baja directo al tocar el enlace).
+2. No lo descomprimas: Claude lo necesita tal cual.
 
-> Si no ves ese archivo, en la página principal del repositorio toca el botón verde **Code → Download ZIP**.
+> Si el enlace no funciona, entra a la carpeta [`dist/`](https://github.com/contenido-wq/clonar-carrusel/tree/main/dist), abre `clonar-carrusel.zip` y toca el botón de descarga (⬇️).
 
 ### 2. Activa lo necesario en Claude
 1. Abre [claude.ai](https://claude.ai) y entra a **Configuración** (Settings).
