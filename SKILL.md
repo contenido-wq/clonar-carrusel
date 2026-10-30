@@ -36,7 +36,8 @@ node scripts/capturar.js "<url del post>" carruseles/<codigo>/original
 Usa la ruta absoluta de `scripts/` dentro de esta skill. Playwright y Chromium deben estar instalados (`node -e "require('playwright')"`).
 
 Lo que ya sabemos que puede pasar:
-- **`ERR_TUNNEL_CONNECTION_FAILED` o 403**: el acceso de red del entorno no permite instagram.com ni cdninstagram.com. Dile a la persona cómo habilitarlos y detente; no inventes slides.
+- **`ERR_TUNNEL_CONNECTION_FAILED`, 403, Playwright no instalado o sin terminal** (por ejemplo, en Claude.ai): no se puede capturar desde aquí. **Plan B:** pídele a la persona capturas de pantalla de cada slide, en orden, más el texto del caption si lo tiene. Guárdalas como `original/slide_01.jpg`, `slide_02.jpg`… y sigue el flujo normal. Si prefiere arreglar la red, dile que habilite `instagram.com` y `cdninstagram.com` en el acceso de red de su entorno. Nunca inventes slides que no viste.
+- **Sin terminal para renderizar** (no se puede correr `render.js`): entrega `carrusel.html` para que lo abra en el navegador y haga capturas de cada slide, o publícalo como página si el entorno lo permite. Dile claramente que los PNG no se generaron.
 - **El embed puede traer menos slides que el post.** Compara con la numeración visible: si la portada dice "01/08" y las demás "/10", la portada manda (el "/10" sobra de un borrador). Si de verdad faltan slides, dilo en vez de rellenar.
 - **El script ya resuelve** el JSON con doble escape (`\\u0026`, `\\/`) y el proxy: el navegador se lanza con `HTTPS_PROXY`. Si cambias el script, conserva ambas cosas.
 - El caption original queda en `caption_original.txt`. Ahí suele estar el CTA cuando no aparece en las slides.

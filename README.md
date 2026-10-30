@@ -29,19 +29,16 @@ Guarda los carruseles que te gustan como **estilos** y replícalos con otros tem
 
 ## Instalación
 
-**Claude Code:** clona el repo dentro de tus skills.
+👉 **[Guía de instalación paso a paso](INSTALACION.md)**, para cualquier persona, sin necesidad de programar.
 
-```bash
-git clone https://github.com/contenido-wq/clonar-carrusel ~/.claude/skills/clonar-carrusel
-```
+- **Claude.ai:** descarga `clonar-carrusel.zip` desde [Releases](https://github.com/contenido-wq/clonar-carrusel/releases/latest) y súbelo en *Configuración → Capacidades → Skills*.
+- **Claude Code:**
+  ```bash
+  git clone https://github.com/contenido-wq/clonar-carrusel ~/.claude/skills/clonar-carrusel
+  cd ~/.claude/skills/clonar-carrusel && npm install playwright && npx playwright install chromium && pip install pillow
+  ```
 
-**Claude.ai:** descarga el repo como ZIP y súbelo en *Settings → Capabilities → Skills*.
-
-### Requisitos
-
-- Node.js con [Playwright](https://playwright.dev) y Chromium (`npm i playwright && npx playwright install chromium`).
-- Python 3 con Pillow (`pip install pillow`).
-- Acceso de red a `instagram.com`, `cdninstagram.com` y Google Fonts. Si tu entorno usa proxy, los scripts toman `HTTPS_PROXY` automáticamente.
+Si tu entorno no puede entrar a Instagram, la skill te pide capturas de pantalla de los slides y sigue igual.
 
 ## Uso
 
