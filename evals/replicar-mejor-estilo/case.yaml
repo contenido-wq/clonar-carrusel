@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: replicar-mejor-estilo
+expected_outcome: |
+  Usa el estilo "Cuaderno mapas mentales" que el usuario nombró, no pide métricas, no captura nada de Instagram, reutiliza la plantilla del estilo con el tema nuevo, mantiene el CTA TALLER, renderiza los PNG y los compara contra las muestras del estilo.
+context:
+  scaffold_script: place-files.sh

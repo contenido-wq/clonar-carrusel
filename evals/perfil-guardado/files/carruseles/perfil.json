@@ -1,0 +1,15 @@
+{
+  "instagram": "@lau.fotografa",
+  "negocio": "Fotógrafa de marca personal en Medellín. Sesiones para emprendedoras.",
+  "precio_referencia": "Sesión de marca personal: 650.000 COP",
+  "cliente_ideal": {"quien": "Emprendedoras de servicios de 28 a 45 años", "dolor": "Se ven poco profesionales en redes y les da pena salir en fotos", "frases_que_dice": ["no soy fotogénica", "no sé posar"]},
+  "objetivo_carrusel": "leads",
+  "oferta": {"tipo": "servicio", "nombre": "Sesión Marca Personal", "gratis_o_pago": "pago", "fecha": "", "link": ""},
+  "cta": {"palabra": "SESION", "entrega": "info y fechas disponibles por DM", "auto_dm": true},
+  "modelo": {"url": "https://www.instagram.com/p/DeepU_PER-s/", "que_le_gusto": "el gancho"},
+  "fidelidad": "espejo",
+  "autoridad_verificable": ["8 años como fotógrafa", "más de 300 sesiones"],
+  "voz": {"trato": "tú", "pais_audiencia": "Colombia", "prohibido": ["empoderar"], "notas": "cercana, con humor"},
+  "marca": {"colores": ["#1F2A44", "#E9C46A"], "fuentes": [], "foto": ""},
+  "pendientes": []
+}

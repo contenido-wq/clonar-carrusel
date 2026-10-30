@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: cliente-nuevo-nota-de-voz
+expected_outcome: |
+  Usa lo que ya dijo la nota de voz (Instagram, negocio, precio, cliente ideal, objetivo, oferta del reto, trato de tú) y no lo vuelve a preguntar. En un solo mensaje pregunta solo lo que falta (palabra del CTA y auto-DM, qué le gustó del modelo, espejo o inspirado, pruebas reales, marca y foto) y no inventa datos.

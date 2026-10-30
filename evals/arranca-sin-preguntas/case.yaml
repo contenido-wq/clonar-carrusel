@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: arranca-sin-preguntas
+expected_outcome: |
+  No hace la entrevista. Captura el carrusel, hace el ADN, escribe copy.md en espejo con la voz de Andrés y el CTA "Comenta MENTORIA", renderiza los PNG de 1080x1350 y la hoja de comparación, y marca como supuestos o datos a confirmar lo que no sabe (pruebas, cifras, foto), sin inventarlo.

@@ -1,0 +1,117 @@
+{
+  "nombre": "Cuaderno mapas mentales",
+  "id": "cuaderno-mapas-mentales",
+  "creado": "2026-10-30",
+  "fuente_modelo": "https://www.instagram.com/p/DeepU_PER-s/ (@filipe.viana, portugués)",
+  "proyecto_origen": "/home/user/carruseles/DeepU_PER-s",
+  "slides": 6,
+  "nota": "Hoja de cuaderno + 4 mapas mentales + CTA en óvalo rojo. Ideal para marcos de 4 categorías.",
+  "adn": {
+    "fuente": "https://www.instagram.com/p/DeepU_PER-s/ (@filipe.viana, portugués)",
+    "slides": 6,
+    "formato": "1122x1402 (4:5)",
+    "textos": [
+      {
+        "n": 1,
+        "rol": "gancho / portada",
+        "palabras": 11,
+        "texto": "4 TIPOS DE CONTEÚDO QUE IMPRIMEM DINHEIRO | Ensinar. Conectar. Provar. Opinar. | 4 íconos unidos por flechas (libro+bombillo → persona+corazón → gráfico+check → globo con !)"
+      },
+      {
+        "n": 2,
+        "rol": "tipo 1 (educativo), sin número en el título",
+        "palabras": 42,
+        "texto": "CONTEÚDO EDUCATIVO | Ensine algo útil, resolva um problema real... | Centro: O QUE INCLUI | 6 nodos: Erros comuns, Mitos vs. fatos, O que fazer e o que não fazer, Instruções passo a passo, Princípios fundamentais, Métodos"
+      },
+      {
+        "n": 3,
+        "rol": "tipo 2 (storytelling)",
+        "palabras": 38,
+        "texto": "2. CONTEÚDO DE STORYTELLING | As pessoas compram de pessoas com quem se identificam... | Centro: COMPARTILHE | 5 nodos: Grandes objetivos, Desafios, Viradas, Detalhes pessoais, Sua jornada"
+      },
+      {
+        "n": 4,
+        "rol": "tipo 3 (autoridad)",
+        "palabras": 31,
+        "texto": "3. CONTEÚDO DE AUTORIDADE | Prove que você sabe... | Centro: MOSTRE A PROVA | 6 nodos: Estudos de caso, Resultados, Jornadas de clientes, Depoimentos, Sua transformação, Prints"
+      },
+      {
+        "n": 5,
+        "rol": "tipo 4 (opinión / yap)",
+        "palabras": 44,
+        "texto": "4. CONTEÚDO YAP | Opinião forte cria memória... | Centro: SOLTE O QUE PENSA | 6 nodos: Opiniões impopulares, O que te irrita no seu nicho, Verdades que ninguém fala, O que todo mundo faz errado, Onde você discorda dos gurus, Previsões sobre o mercado"
+      },
+      {
+        "n": 6,
+        "rol": "CTA palabra clave",
+        "palabras": 22,
+        "texto": "Pregunta de dolor (no tiene tiempo) | Comente | PREGUIÇA (encerrada en óvalo rojo) | e receba o template que reduziu a minha produção em 80% | reloj → globo de chat"
+      }
+    ],
+    "paleta": {
+      "papel": "#e9e6df",
+      "papel_sombra": "#e4dfd9",
+      "tinta_azul": "#0c2b97",
+      "rojo_subrayado": "#da4048",
+      "margen_rojo": "#ce6d74",
+      "renglon_azul": "#a5b3bc"
+    },
+    "fondo": "Hoja de cuaderno rayada fotorrealista: papel crema con textura, renglones azul gris cada ~67px, margen rojo vertical a x≈110, 3 perforaciones a la izquierda, viñeta suave en bordes.",
+    "tipografias": {
+      "titulo": "Marcador a mano, MAYÚSCULAS, trazo condensado → Google Font más parecida: Gochi Hand",
+      "cuerpo_y_etiquetas": "Letra de molde manuscrita, limpia → Google Font más parecida: Patrick Hand",
+      "cta_palabra": "Mismo marcador del título, mucho más grande y grueso"
+    },
+    "jerarquia_px_en_1122": {
+      "titulo_portada": 95,
+      "titulo_slide": 80,
+      "cuerpo": 48,
+      "centro_mapa": 52,
+      "etiqueta_nodo": 40,
+      "cta_keyword": 160
+    },
+    "margenes_alineacion": "Todo el contenido a la derecha del margen rojo (x≈140 a 1060). Títulos alineados a la izquierda con número; cuerpo alineado a la izquierda; mapa mental centrado; portada y CTA centrados verticalmente.",
+    "recursos_repetidos": [
+      "doble subrayado rojo a mano bajo cada título",
+      "mapa mental: óvalo doble al centro + 5–6 flechas a nodos",
+      "doodles de tinta azul con rayitos de énfasis (líneas cortas alrededor)",
+      "numeración 2., 3., 4. en el título",
+      "flechas entre íconos (portada y CTA)",
+      "óvalo rojo encerrando la palabra clave del CTA",
+      "sin handle, sin numeración de página, sin fotos, sin 'desliza'"
+    ],
+    "narrativa": {
+      "tipo": "lista / framework de categorías (taxonomía guardable)",
+      "formula_gancho": "Número + categoría concreta + resultado metafórico exagerado ('imprimen dinero') + subtítulo de 4 palabras de una sola palabra cada una que adelanta la lista",
+      "roles": [
+        "promesa + índice visual",
+        "categoría 1 + qué incluye",
+        "categoría 2 + qué compartir",
+        "categoría 3 + qué mostrar",
+        "categoría 4 + qué decir",
+        "dolor de tiempo + palabra clave + recurso"
+      ],
+      "enganche_entre_slides": "El subtítulo de la portada funciona como índice: el lector sabe que faltan 4 piezas y desliza para completarlas. Cada slide repite la misma plantilla, así que el cerebro anticipa el siguiente número. La última slide cambia de patrón (sin mapa) para marcar el cierre.",
+      "cta": "Palabra clave en comentarios (PREGUIÇA) a cambio de una plantilla; conecta con la objeción de falta de tiempo que deja la lista ('esto es mucho trabajo')",
+      "por_que_funciona": [
+        "Formato hoja de cuaderno: se ve casero y auténtico, no como un anuncio, y frena el scroll en un feed lleno de diseño pulido",
+        "Mapa mental = 6 ideas por slide de un vistazo, alto valor percibido y muy guardable",
+        "Gancho con número + promesa de dinero + índice de 4 palabras: claridad instantánea",
+        "Plantilla repetida: fácil de leer y de predecir; cada slide es completa por sí sola (compartible)",
+        "El CTA ataca la objeción que crea el propio carrusel (no tengo tiempo) y la convierte en comentario, que impulsa el alcance"
+      ]
+    }
+  },
+  "rendimiento": [
+    {
+      "fecha": "2026-10-30",
+      "link": "",
+      "alcance": 20000,
+      "guardados": 900,
+      "compartidos": 300,
+      "comentarios": 250,
+      "palabra": 180,
+      "seguidores": 120
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+# Trabajo del usuario: carruseles generados y su biblioteca de estilos
+/carruseles/
+# Resultados de pruebas y paquetes
+evals/results/
+*-workspace/
+*.skill
+node_modules/
+__pycache__/
+.DS_Store

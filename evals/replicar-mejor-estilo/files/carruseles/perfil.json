@@ -1,0 +1,42 @@
+{
+  "instagram": "@jheitrujillob",
+  "negocio": "Estratega digital y creador de AIVI (IA para estrategia de contenido). +2.000 clientes.",
+  "cliente_ideal": {
+    "quien": "Dueños de negocio y emprendedores de LATAM",
+    "dolor": "publican y no pasa nada, no tienen tiempo"
+  },
+  "objetivo_carrusel": "leads",
+  "oferta": {
+    "tipo": "taller",
+    "nombre": "Taller de contenido que vende con IA",
+    "gratis_o_pago": "",
+    "fecha": "",
+    "link": ""
+  },
+  "cta": {
+    "palabra": "TALLER",
+    "entrega": "acceso al taller",
+    "auto_dm": true
+  },
+  "fidelidad": "espejo",
+  "autoridad_verificable": [
+    "+2.000 clientes",
+    "creador de AIVI",
+    "exprogramador y fotógrafo"
+  ],
+  "voz": {
+    "trato": "tú",
+    "pais_audiencia": "LATAM",
+    "prohibido": [
+      "sinergia",
+      "empoderar"
+    ],
+    "notas": "directo, frases cortas, sin hashtags"
+  },
+  "marca": {
+    "colores": [],
+    "fuentes": [],
+    "foto": ""
+  },
+  "pendientes": []
+}

@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: perfil-guardado
+expected_outcome: |
+  Lee carruseles/perfil.json, muestra un resumen corto del perfil y pregunta solo lo propio de este carrusel (objetivo, oferta o CTA si cambian, qué le gustó del modelo nuevo, fidelidad), sin repetir las 10 preguntas.
+context:
+  scaffold_script: place-files.sh
