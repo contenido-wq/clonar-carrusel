@@ -106,7 +106,7 @@ Corrige hasta que pase. Los problemas típicos son títulos que se parten encima
 
 ## Paso 6: entrega
 
-1. Envía `comparacion.png` y los PNG finales.
+1. Empaqueta los PNG finales en un ZIP (`zip -qj carrusel-<tema>.zip final/slide_*.png`) y envíalo junto a `comparacion.png`. Así la persona baja todo de una vez, con los slides en orden para subirlos a Instagram. Manda los PNG sueltos solo si los pide.
 2. Pega en el chat el caption listo para copiar y 2 ganchos alternativos.
 3. Lista los `[DATO A CONFIRMAR]` y los pendientes: fotos, datos de la oferta, auto-DM activo.
 4. Cierra con una recomendación estratégica de una línea, conectada con su objetivo.
