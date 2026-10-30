@@ -79,6 +79,7 @@ Dale a la persona un resumen de 5 a 8 líneas.
 
 - Usa un `<section class="slide">` de 1080x1350 por slide, con los tokens en `:root` y Google Fonts.
 - Replica la composición de cada slide del modelo. Pon el handle de la persona donde el modelo pone el suyo.
+- **Marca de agua:** pon siempre el @ de la persona en todas las slides, abajo y centrado, con la misma letra del carrusel, en el color del texto al 50–60 % de opacidad y a unos 45 px de alto. Así, si alguien comparte un slide suelto, el @ viaja con él. Si el modelo ya tiene un lugar fijo para el handle, úsalo ahí en vez de abajo. Verifica que no choque con el texto ni con el subrayado del CTA en la slide más cargada.
 - **Fotos**: si la persona dio una foto, cópiala a la carpeta del proyecto y úsala. Encuádrala para que ningún texto ni tarjeta le tape la cara, y funde el borde con `mask-image` si queda un corte visible. Si no hay foto, deja un recuadro punteado con la descripción de la foto que debe tomar.
 - **Logos de marcas ajenas**: no los dibujes. Usa íconos genéricos más el nombre.
 - **Títulos que deben caber en una línea**: un script que reduzca el `font-size` hasta que `scrollWidth` quepa (render.js espera 400 ms a que corra).
