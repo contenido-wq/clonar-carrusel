@@ -52,8 +52,12 @@ def guardar(a):
         p = os.path.join(src, f)
         if os.path.isfile(p) and f.lower().endswith((".jpg", ".jpeg", ".png", ".webp", ".svg", ".woff", ".woff2", ".ttf")) and f != "comparacion.png" and not f.startswith("comparacion"):
             shutil.copy(p, dst)
-    if os.path.isdir(os.path.join(src, "fonts")):
-        shutil.copytree(os.path.join(src, "fonts"), os.path.join(dst, "fonts"), dirs_exist_ok=True)
+    # Subcarpetas que usa la plantilla (fuentes, fotos, imágenes generadas). No copia capturas ni renders.
+    html_txt = open(html, encoding="utf-8").read()
+    for d in os.listdir(src):
+        if os.path.isdir(os.path.join(src, d)) and (d == "fonts" or f'{d}/' in html_txt) \
+                and d not in ("original", "muestras") and not d.startswith("final"):
+            shutil.copytree(os.path.join(src, d), os.path.join(dst, d), dirs_exist_ok=True)
     finales = sorted(glob.glob(os.path.join(src, a.final, "slide_*.png")))
     if finales:
         os.makedirs(os.path.join(dst, "muestras"), exist_ok=True)
