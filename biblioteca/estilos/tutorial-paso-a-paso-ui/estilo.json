@@ -1,0 +1,125 @@
+{
+  "nombre": "Tutorial paso a paso UI",
+  "id": "tutorial-paso-a-paso-ui",
+  "creado": "2026-10-30",
+  "fuente_modelo": "https://www.instagram.com/p/Degci3xE2vR/ (@aiwithanushka, inglés)",
+  "proyecto_origen": "/home/user/carruseles/Degci3xE2vR",
+  "slides": 8,
+  "nota": "Fondo crema, mocks de UI, STEP 1-4, prompt copiable y límites. Ideal para mostrar un flujo con IA.",
+  "adn": {
+    "fuente": "https://www.instagram.com/p/Degci3xE2vR/ (@aiwithanushka, inglés)",
+    "slides": 8,
+    "nota": "Las slides internas dicen /10 (sobrantes de un borrador). La portada dice 01/08. No hay Step 4 ni slide de CTA: el CTA va solo en el caption ('Comment edit').",
+    "textos": [
+      {
+        "n": 1,
+        "rol": "gancho",
+        "palabras": 11,
+        "texto": "Delete CapCut. / Delete Premiere. / Delete Edits. / Now Claude edits. Cuatro íconos de app; los 3 primeros tachados con una línea naranja."
+      },
+      {
+        "n": 2,
+        "rol": "paso 1 + mock de chat",
+        "palabras": 60,
+        "texto": "STEP 1 / Drop the raw file in. Say what you want. / ventana de Claude con archivo + prompt + plan de 3 pasos / I used Claude in Cowork. Plain English, no editing jargon."
+      },
+      {
+        "n": 3,
+        "rol": "paso 2 + terminal",
+        "palabras": 55,
+        "texto": "STEP 2 / It finds every pause and every 'um'. / terminal con whisper + ffmpeg silencedetect / Whisper gives word-level timestamps. ffmpeg finds the dead air."
+      },
+      {
+        "n": 4,
+        "rol": "paso 3 + tabla de cortes",
+        "palabras": 60,
+        "texto": "STEP 3 / Then it decides what stays. / cut_list.json con CUT/KEEP / Every cut comes with a reason, so you can overrule it."
+      },
+      {
+        "n": 5,
+        "rol": "paso 5 + 3 celulares",
+        "palabras": 30,
+        "texto": "STEP 5 / Three hooks. Same footage. / 3 teléfonos con hook A/B/C / Post them as trial reels and keep the winner."
+      },
+      {
+        "n": 6,
+        "rol": "prompt copiable",
+        "palabras": 55,
+        "texto": "COPY THIS / The exact prompt I used. / bloque de código con 6 pasos / Step 3 matters most..."
+      },
+      {
+        "n": 7,
+        "rol": "antes / ahora",
+        "palabras": 35,
+        "texto": "WHAT CHANGED / My editing week, before and after. / tarjeta gris BEFORE (3 flechas) + tarjeta durazno NOW (3 flechas en naranja negrita)"
+      },
+      {
+        "n": 8,
+        "rol": "limitaciones (credibilidad)",
+        "palabras": 70,
+        "texto": "READ THIS TWICE / What it can't do (yet). / 4 viñetas naranjas con inicio en negrita"
+      }
+    ],
+    "paleta": {
+      "fondo": "#fbf5e9",
+      "titulo": "#241f19",
+      "acento": "#e15a00",
+      "kicker": "#d0620f",
+      "texto_gris": "#6b6158",
+      "tarjeta": "#ffffff",
+      "burbuja": "#fbe9db",
+      "terminal": "#1b1a20",
+      "verde_terminal": "#358a60",
+      "antes": "#eeeae1",
+      "ahora": "#f7e1cc",
+      "numero_fantasma": "#f3ead8"
+    },
+    "fondo": "Plano crema, sin textura.",
+    "tipografias": {
+      "titulo": "Montserrat 700/800",
+      "cuerpo": "DM Sans 400/500",
+      "codigo": "JetBrains Mono"
+    },
+    "jerarquia_px_1080": {
+      "kicker": 30,
+      "titulo": 64,
+      "caption": 40,
+      "ui": 22,
+      "handle": 30,
+      "portada": 84
+    },
+    "margenes_alineacion": "Margen izquierdo 96 px, todo alineado a la izquierda. Kicker y=170, título y=215–350, raya naranja corta de 120 px bajo el título, mock UI y=410–1030, caption gris debajo, handle y paginación en y=1295.",
+    "recursos_repetidos": [
+      "kicker naranja en mayúsculas con letter-spacing",
+      "título de 2 líneas + raya naranja corta",
+      "número fantasma enorme arriba a la derecha",
+      "mock de UI realista (ventana con puntos de semáforo)",
+      "caption gris de 1–2 líneas que explica",
+      "handle con punto naranja + paginación"
+    ],
+    "narrativa": {
+      "tipo": "tutorial / detrás de cámaras de un flujo con IA",
+      "formula_gancho": "Repetición triple 'Borra [herramienta que todos usan]' + giro 'Ahora [IA] lo hace'. Patrón de anáfora + ruptura.",
+      "roles": [
+        "gancho de reemplazo",
+        "paso 1",
+        "paso 2",
+        "paso 3",
+        "paso 4",
+        "prompt para copiar (lo más guardado)",
+        "antes/después (resultado)",
+        "límites (credibilidad)"
+      ],
+      "enganche_entre_slides": "Los kickers STEP 1, 2, 3 crean una secuencia que obliga a terminar. 'COPY THIS' premia al que llegó. 'READ THIS TWICE' da honestidad justo antes del CTA.",
+      "cta": "Palabra clave en el caption ('edit') a cambio del flujo completo.",
+      "por_que_funciona": [
+        "Gancho polémico: decirle a la gente que borre las apps que usa a diario genera comentarios y debate",
+        "Las capturas de UI muy realistas prueban que esto existe y se puede hacer, no es humo",
+        "Prompt copiable: hace que lo guarden",
+        "Mostrar límites sube la confianza y reduce el 'esto es venta'",
+        "Diseño limpio de producto, aspecto de documentación seria"
+      ]
+    }
+  },
+  "rendimiento": []
+}

@@ -1,0 +1,15 @@
+{
+  "instagram": "@jheitrujillob",
+  "negocio": "Estratega digital y creador de AIVI (IA para crear la estrategia de contenido de empresas). +2.000 clientes. Exprogramador y fotógrafo. Medellín.",
+  "precio_referencia": "",
+  "cliente_ideal": {"quien": "Dueños de negocio y emprendedores de LATAM que publican sin estrategia", "dolor": "publican y no pasa nada; no tienen tiempo", "frases_que_dice": ["publico y no pasa nada", "no tengo tiempo"]},
+  "objetivo_carrusel": "leads",
+  "oferta": {"tipo": "taller", "nombre": "Taller de contenido que vende con IA", "gratis_o_pago": "", "fecha": "", "link": ""},
+  "cta": {"palabra": "TALLER", "entrega": "acceso al taller de contenido que vende con IA", "auto_dm": null},
+  "modelo": {"url": "", "que_le_gusto": ""},
+  "fidelidad": "espejo",
+  "autoridad_verificable": ["+2.000 clientes", "creador de AIVI", "exprogramador y fotógrafo"],
+  "voz": {"trato": "tú", "pais_audiencia": "LATAM", "prohibido": ["sinergia", "empoderar", "hashtags", "promesas de ingresos"], "notas": "Skill de voz: voz-el-solucionador. Directo, par a par, enseñanza con paso a paso."},
+  "marca": {"colores": ["#FFC252", "#FE803F", "#FF413B", "#101010", "#F1EBDF"], "fuentes": [], "foto": "estilos/tutorial-paso-a-paso-ui/jhei.jpg"},
+  "pendientes": ["fecha, precio y link del taller", "confirmar auto-DM para TALLER"]
+}

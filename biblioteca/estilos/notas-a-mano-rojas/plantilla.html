@@ -1,0 +1,25 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Carrusel historias</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f6f6;--fg:#cc0000;--line:#222;--f:'Shadows Into Light Two',cursive}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#777;display:flex;flex-direction:column;gap:40px;align-items:center;padding:40px 0}
+.slide{position:relative;width:1080px;height:1350px;overflow:hidden;background:var(--bg);display:flex;align-items:center;justify-content:center;padding:0 80px}
+/* papel: fibras diagonales muy suaves + grano */
+.slide::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(-14deg,rgba(0,0,0,.018) 0 2px,transparent 2px 9px),radial-gradient(ellipse at 50% 45%,#fdfdfd 45%,#f1f1f2 100%);pointer-events:none}
+.slide::after{content:"";position:absolute;inset:0;opacity:.18;mix-blend-mode:multiply;pointer-events:none;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='260' height='260'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .5  0 0 0 .45 0'/></filter><rect width='260' height='260' filter='url(%23n)'/></svg>")}
+.t{position:relative;z-index:1;flex:none;width:820px;font-family:var(--f);color:var(--fg);font-size:138px;line-height:1.04;text-align:center;-webkit-text-stroke:3.5px var(--fg);word-spacing:-.08em;transform:scaleX(1.17)}
+.kw{position:relative;display:inline-block}
+.wm{position:absolute;z-index:3;left:0;right:0;bottom:46px;text-align:center;font-family:var(--f);font-size:46px;color:var(--fg);opacity:.55;-webkit-text-stroke:.6px var(--fg);letter-spacing:1px}
+.kw svg{position:absolute;left:-4%;width:108%;bottom:-34px;height:34px;overflow:visible}
+.kw path{fill:none;stroke:var(--line);stroke-width:11;stroke-linecap:round}
+</style></head><body>
+<section class="slide"><p class="t">Tu primera historia del día SIEMPRE tiene que ser tu cara, NUNCA una venta.</p><div class="wm">@jheitrujillob</div></section>
+<section class="slide"><p class="t">Subir 15 historias seguidas hace que te salten todas.</p><div class="wm">@jheitrujillob</div></section>
+<section class="slide"><p class="t">Una historia con encuesta te muestra más a quien la responde.</p><div class="wm">@jheitrujillob</div></section>
+<section class="slide"><p class="t">Si solo apareces para vender, aprenden a saltarte.</p><div class="wm">@jheitrujillob</div></section>
+<section class="slide"><p class="t">Los Reels te traen gente nueva. Las historias convierten a esa gente en CLIENTES.</p><div class="wm">@jheitrujillob</div></section>
+<section class="slide"><p class="t" style="font-size:122px">Y si quieres que te enseñe a crear historias que venden con IA, comenta<br><span class="kw" style="font-size:160px">TALLER.<svg viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M3 7 Q30 3 60 4 T97 3" vector-effect="non-scaling-stroke"/></svg></span></p><div class="wm">@jheitrujillob</div></section>
+</body></html>

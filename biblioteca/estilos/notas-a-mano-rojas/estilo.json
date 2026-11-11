@@ -1,0 +1,92 @@
+{
+  "nombre": "Notas a mano rojas",
+  "id": "notas-a-mano-rojas",
+  "creado": "2026-10-30",
+  "fuente_modelo": "https://www.instagram.com/p/DefYD4qCZVr/ (@marceloalaminoo, portugués, 1.521 comentarios)",
+  "proyecto_origen": "/home/user/carruseles/DefYD4qCZVr",
+  "slides": 6,
+  "nota": "Fondo blanco, una frase tajante por slide en letra a mano roja, palabra clave en MAYÚSCULAS, CTA subrayado en negro y @ como marca de agua abajo. Ideal para reglas, mitos o verdades rápidas.",
+  "adn": {
+    "fuente": "https://www.instagram.com/p/DefYD4qCZVr/ (@marceloalaminoo, portugués, 1.521 comentarios)",
+    "slides": 6,
+    "textos": [
+      {
+        "n": 1,
+        "rol": "gancho: regla absoluta",
+        "palabras": 12,
+        "texto": "O seu primeiro Story sempre tem que ser uma foto, NUNCA um vídeo."
+      },
+      {
+        "n": 2,
+        "rol": "secreto 1",
+        "palabras": 7,
+        "texto": "Usar música nos Stories reduz as visualizações."
+      },
+      {
+        "n": 3,
+        "rol": "secreto 2",
+        "palabras": 11,
+        "texto": "Repostar publicações do feed nos Stories reduz as visualizações do story."
+      },
+      {
+        "n": 4,
+        "rol": "secreto 3",
+        "palabras": 7,
+        "texto": "Quem publica Stories com frequência perde menos seguidores."
+      },
+      {
+        "n": 5,
+        "rol": "verdad que reencuadra",
+        "palabras": 14,
+        "texto": "Os Stories não servem para alcançar novas pessoas, servem para RETER quem já te segue."
+      },
+      {
+        "n": 6,
+        "rol": "CTA palabra clave",
+        "palabras": 21,
+        "texto": "Agora, se você quer que eu analise o seu perfil e crie um plano de ação viral para ele, comente ANALISAR. (subrayado negro a mano)"
+      }
+    ],
+    "paleta": {
+      "fondo": "#f6f6f6 (papel blanco con fibras diagonales suaves)",
+      "texto": "#cc0000",
+      "subrayado": "#222222"
+    },
+    "tipografias": {
+      "todo": "Marcador a mano redondeado, vertical → Google Font: Shadows Into Light Two con trazo engrosado"
+    },
+    "jerarquia_px_1117": {
+      "texto": "~120 px, interlineado ~1.05",
+      "palabra_enfasis": "misma fuente en MAYÚSCULAS"
+    },
+    "margenes_alineacion": "Texto centrado horizontal y verticalmente, márgenes de ~90 px, 4 a 7 líneas por slide.",
+    "recursos_repetidos": [
+      "una sola idea por slide",
+      "una palabra en MAYÚSCULAS como énfasis (NUNCA, RETER, ANALISAR)",
+      "sin handle, sin numeración, sin íconos",
+      "subrayado negro solo bajo la palabra del CTA"
+    ],
+    "narrativa": {
+      "tipo": "lista de 'secretos' o reglas del algoritmo (mitos/verdades), una por slide",
+      "formula_gancho": "Regla absoluta y específica sobre algo cotidiano ('tu primer story SIEMPRE… NUNCA…'). Genera curiosidad y desacuerdo, y el desacuerdo genera comentarios.",
+      "roles": [
+        "regla tajante",
+        "regla 2",
+        "regla 3",
+        "regla 4 en positivo",
+        "giro que reencuadra para qué sirve todo",
+        "oferta de análisis + palabra clave"
+      ],
+      "enganche_entre_slides": "Cada slide es una afirmación corta que se lee en 2 segundos y deja con ganas de la siguiente. El formato tipo nota a mano se siente como un consejo de un amigo, no como un anuncio.",
+      "cta": "Palabra clave a cambio de un análisis personalizado (alto valor percibido, muy específico).",
+      "por_que_funciona": [
+        "Afirmaciones tajantes y polémicas: la gente comenta para estar de acuerdo o para discutir",
+        "Mínimo esfuerzo de lectura: 7 a 14 palabras por slide, letra enorme",
+        "Estética ultra simple que se ve personal y auténtica en un feed lleno de diseño",
+        "El giro del slide 5 cambia la forma de ver el tema y le da sentido a los anteriores",
+        "El CTA ofrece algo hecho a la medida (análisis de tu perfil), no un recurso genérico"
+      ]
+    }
+  },
+  "rendimiento": []
+}
