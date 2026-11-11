@@ -1,0 +1,276 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Claude para inmobiliarias</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{--red:#e0242f;--ink:#141414;--mut:#666;--soft:#fbe9ea;--line:#ececec;--cl:#d97757}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#777;display:flex;flex-direction:column;gap:40px;align-items:center;padding:40px 0}
+.slide{position:relative;width:1080px;height:1350px;overflow:hidden;background:#fff;color:var(--ink);font-family:'Inter',sans-serif}
+.wm{position:absolute;left:0;right:0;bottom:30px;text-align:center;font-weight:700;font-size:26px;color:#9a9a9a}
+.top{position:absolute;left:60px;right:60px;top:50px;text-align:center}
+.step{font-weight:900;font-size:120px;line-height:.95;letter-spacing:-4px;color:var(--red)}
+.t{font-weight:900;font-size:66px;line-height:1;letter-spacing:-2.5px}
+.d{font-size:28px;line-height:1.35;color:#333;margin-top:16px}
+.hw{font-family:'Caveat',cursive;color:var(--red);font-size:44px;line-height:1}
+.card{position:absolute;background:#fff;border:2px solid var(--line);border-radius:22px;box-shadow:0 18px 40px rgba(0,0,0,.08);overflow:hidden}
+.chead{display:flex;align-items:center;justify-content:space-between;padding:16px 22px;border-bottom:2px solid var(--line);font-weight:700;font-size:24px}
+.logo{display:inline-flex;align-items:center;gap:10px}
+.pill{font-size:18px;font-weight:600;border:2px solid var(--line);border-radius:30px;padding:4px 14px;color:#555}
+.pr{padding:20px 24px;font-size:22px;line-height:1.45;color:#222}
+.pr .lab{display:block;font-weight:800;font-size:17px;letter-spacing:2px;color:var(--red);margin-bottom:8px}
+.msg{margin:0 22px 20px;border:2px solid var(--line);border-radius:16px;padding:14px 18px;font-size:19px;color:#999;display:flex;justify-content:space-between}
+.chk{position:absolute;left:90px;right:90px}
+.chk .r{display:flex;align-items:center;gap:20px;padding:16px 0;border-bottom:2px solid var(--line);font-weight:700;font-size:28px}
+.ic{flex:none;width:52px;height:52px;border-radius:14px;background:var(--soft);display:flex;align-items:center;justify-content:center;color:var(--red);font-weight:900;font-size:26px}
+.side{position:absolute;right:60px;width:330px}
+.side h4{font-weight:800;font-size:28px;line-height:1.15;margin-bottom:14px}
+.side li{list-style:none;display:flex;gap:12px;align-items:flex-start;font-size:22px;line-height:1.3;padding:7px 0;color:#333}
+.side li::before{content:"✓";flex:none;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center}
+.badge{display:inline-block;background:var(--red);color:#fff;font-weight:800;font-size:20px;border-radius:30px;padding:5px 16px}
+.opt{position:absolute;border:2px solid var(--line);border-radius:20px;padding:22px;background:#fff}
+.opt.on{border-color:var(--red);background:var(--soft)}
+.opt h5{font-weight:800;font-size:26px;margin:12px 0 8px}
+.opt p{font-size:20px;line-height:1.3;color:#555}
+.ph{background-size:cover;background-position:center}
+.guide{position:absolute;border-radius:14px;overflow:hidden;box-shadow:0 18px 40px rgba(0,0,0,.18);background:#fff}
+.guide .gt{padding:14px 18px}
+.guide .gt b{display:block;font-weight:900;font-size:30px;line-height:1;color:var(--red)}
+.guide .gt span{font-size:16px;color:#555}
+.flow{position:absolute;left:50px;right:50px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.fs{background:#fff;border:2px solid var(--line);border-radius:20px;padding:18px;text-align:center}
+.fs .n{display:inline-flex;width:46px;height:46px;border-radius:50%;background:var(--red);color:#fff;font-weight:900;font-size:24px;align-items:center;justify-content:center}
+.fs h6{font-weight:800;font-size:23px;margin:12px 0 6px;line-height:1.1}
+.fs p{font-size:18px;line-height:1.3;color:#555}
+.dm{position:absolute;background:#111;color:#fff;border-radius:28px;padding:20px 22px;box-shadow:0 20px 50px rgba(0,0,0,.3)}
+.dm .h{font-weight:700;font-size:22px;margin-bottom:12px;display:flex;justify-content:space-between}
+.dm .c{display:flex;gap:12px;align-items:center;padding:9px 0;border-top:1px solid #262626}
+.av{flex:none;width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#f0a,#fa0)}
+.dm .c b{display:block;font-size:18px}.dm .c span{font-size:17px;color:#bbb}
+.dock{display:flex;gap:14px;background:rgba(30,30,30,.92);border-radius:24px;padding:14px 18px;width:max-content;margin:0 auto}
+.dock i{width:62px;height:62px;border-radius:15px;display:block}
+.modal{width:620px;margin:0 auto;border:2px solid var(--line);border-radius:18px;box-shadow:0 18px 40px rgba(0,0,0,.08);padding:24px;text-align:left}
+.modal h5{font-size:26px;font-weight:800;margin-bottom:14px}
+.modal label{display:block;font-size:18px;font-weight:600;color:#555;margin:12px 0 6px}
+.inp{border:2px solid #b9c7ff;border-radius:10px;padding:10px 14px;font-size:22px}
+.inp.big{border-color:var(--line);height:80px;color:#aaa;font-size:18px}
+.btns{display:flex;justify-content:flex-end;gap:12px;margin-top:16px}
+.btns span{font-size:18px;font-weight:700;border-radius:10px;padding:8px 16px;border:2px solid var(--line)}
+.btns span.k{background:#111;color:#fff;border-color:#111}
+.sign{position:absolute;background:var(--red);color:#fff;font-weight:900;font-size:40px;letter-spacing:2px;padding:14px 26px;border-radius:10px;border:6px solid #fff;box-shadow:0 14px 30px rgba(0,0,0,.25)}
+
+
+.phone{position:absolute;background:#000;border-radius:58px;padding:14px;box-shadow:0 40px 80px rgba(0,0,0,.35)}
+.scr{background:#000;border-radius:46px;overflow:hidden;color:#f5f5f5;font-family:-apple-system,'Inter',sans-serif;position:relative}
+.sb{display:flex;justify-content:space-between;padding:16px 34px 6px;font-weight:600;font-size:22px}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:10px 26px 14px}
+.nav b{font-size:28px;font-weight:700}
+.search{margin:0 22px 14px;background:#262626;border-radius:14px;padding:12px 18px;font-size:22px;color:#a8a8a8}
+.tabs{display:flex;justify-content:space-between;padding:4px 26px 10px;font-size:22px;font-weight:700}
+.tabs span:last-child{color:#0095f6;font-weight:600}
+.row{display:flex;align-items:center;gap:18px;padding:12px 26px}
+.row img{width:78px;height:78px;border-radius:50%;object-fit:cover}
+.row .tx{flex:1;min-width:0}
+.row .n{font-size:23px;font-weight:600}
+.row .m{font-size:21px;color:#a8a8a8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.row.u .n,.row.u .m{color:#f5f5f5;font-weight:700}
+.dot{width:14px;height:14px;border-radius:50%;background:#0095f6}
+.cam{width:30px;height:30px;opacity:.85}
+.igl{position:absolute;width:150px;height:150px;border-radius:40px;background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285AEB 90%);box-shadow:0 20px 40px rgba(214,36,159,.35);display:flex;align-items:center;justify-content:center}
+.th{padding:14px 22px;display:flex;align-items:center;gap:16px;border-bottom:1px solid #262626}
+.th img{width:56px;height:56px;border-radius:50%;object-fit:cover}
+.th b{font-size:23px}.th span{display:block;font-size:18px;color:#a8a8a8}
+.msgs{padding:18px 20px;display:flex;flex-direction:column;gap:10px}
+.b{max-width:76%;padding:14px 20px;border-radius:26px;font-size:22px;line-height:1.3}
+.b.in{background:#262626;align-self:flex-start}
+.b.out{background:linear-gradient(135deg,#7a2cf5,#3b5bfd);align-self:flex-end}
+.tm{align-self:center;font-size:17px;color:#a8a8a8;margin:6px 0}
+.att{align-self:flex-end;width:62%;border-radius:22px;overflow:hidden;background:#262626}
+.att .ph{height:170px;background-size:cover;background-position:center}
+.att p{padding:12px 16px;font-size:20px;font-weight:600}
+.att span{display:block;font-size:17px;color:#a8a8a8;font-weight:400}
+.comp{position:absolute;left:18px;right:18px;bottom:22px;background:#262626;border-radius:30px;padding:14px 22px;font-size:21px;color:#a8a8a8}
+
+.wrap{position:absolute;transform-origin:top left}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="cl" viewBox="0 0 100 100"><g fill="#d97757"><path d="M50 4 54 40 50 46 46 40Z"/><path d="M50 4 54 40 50 46 46 40Z" transform="rotate(30 50 50)"/><path d="M50 4 54 40 50 46 46 40Z" transform="rotate(60 50 50)"/><path d="M50 4 54 40 50 46 46 40Z" transform="rotate(90 50 50)"/><path d="M50 4 54 40 50 46 46 40Z" transform="rotate(120 50 50)"/><path d="M50 4 54 40 50 46 46 40Z" transform="rotate(150 50 50)"/><path d="M50 4 54 40 50 46 46 40Z" transform="rotate(180 50 50)"/><path d="M50 4 54 40 50 46 46 40Z" transform="rotate(210 50 50)"/><path d="M50 4 54 40 50 46 46 40Z" transform="rotate(240 50 50)"/><path d="M50 4 54 40 50 46 46 40Z" transform="rotate(270 50 50)"/><path d="M50 4 54 40 50 46 46 40Z" transform="rotate(300 50 50)"/><path d="M50 4 54 40 50 46 46 40Z" transform="rotate(330 50 50)"/></g></symbol>
+</defs></svg>
+
+<!-- 1 PORTADA -->
+<section class="slide cov">
+<style>
+.cov .ttl{position:absolute;left:100px;top:120px;display:flex;align-items:center;gap:18px;font-weight:800;font-size:108px;letter-spacing:-4px;line-height:1}
+.cov .tile{width:112px;height:112px;border-radius:18px;background:#e0784e;display:flex;align-items:center;justify-content:center}
+.cov .re{position:absolute;left:100px;top:232px;font-weight:800;font-size:134px;letter-spacing:-5px;color:#e10a12;line-height:1}
+.cov .p1{position:absolute;right:90px;top:378px;font-weight:600;font-size:62px;letter-spacing:-1px}
+.cov .dmc{position:absolute;left:60px;top:560px;width:470px;background:#0b0d12;border-radius:30px;padding:14px 0;box-shadow:0 24px 50px rgba(0,0,0,.25);z-index:3}
+.cr{display:flex;align-items:center;gap:14px;padding:10px 20px;color:#f2f2f2}
+.cr .ring{flex:none;width:66px;height:66px;border-radius:50%;padding:3px;background:conic-gradient(#f9ce34,#ee2a7b,#6228d7,#f9ce34)}
+.cr .ring img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:3px solid #0b0d12}
+.cr div{flex:1} .cr b{font-size:20px;font-weight:600} .cr p{font-size:18px;color:#e6e6e6;line-height:1.25} .cr em{font-style:normal;color:#9aa0a6}
+.cr i{width:11px;height:11px;border-radius:50%;background:#2b6cf6}
+.cov .igb{position:absolute;left:430px;top:960px;width:130px;height:130px;border-radius:34px;transform:rotate(-14deg);background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285AEB 90%);display:flex;align-items:center;justify-content:center;z-index:4;box-shadow:0 14px 30px rgba(214,36,159,.35)}
+.cov .jh{position:absolute;right:-170px;top:520px;width:960px;z-index:2}
+</style>
+<p class="ttl"><span class="tile"><svg width="92" height="92" viewBox="0 0 100 100"><g stroke="#fff" stroke-width="7" stroke-linecap="round"><line x1="50" y1="10" x2="50" y2="90"/><line x1="10" y1="50" x2="90" y2="50"/><line x1="22" y1="22" x2="78" y2="78"/><line x1="78" y1="22" x2="22" y2="78"/><line x1="34" y1="12" x2="66" y2="88"/><line x1="66" y1="12" x2="34" y2="88"/><line x1="12" y1="34" x2="88" y2="66"/><line x1="12" y1="66" x2="88" y2="34"/></g><circle cx="50" cy="50" r="7" fill="#e0784e"/></svg></span>Claude para</p>
+<p class="re">Inmobiliarias</p>
+<p class="p1">(Parte 1)</p>
+<svg style="position:absolute;left:300px;top:455px;width:240px;height:110px;z-index:3" viewBox="0 0 240 110"><path d="M235 40 C 190 20, 140 30, 125 55 C 110 85, 150 95, 150 65 C 150 40, 100 35, 20 62" fill="none" stroke="#111" stroke-width="6" stroke-linecap="round"/><path d="M34 44 L16 63 L40 75" fill="none" stroke="#111" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<svg style="position:absolute;left:440px;top:560px;width:220px;height:220px;z-index:1" viewBox="0 0 100 100"><g stroke="#f08a5d" stroke-width="7" stroke-linecap="round"><line x1="50" y1="6" x2="50" y2="94"/><line x1="6" y1="50" x2="94" y2="50"/><line x1="19" y1="19" x2="81" y2="81"/><line x1="81" y1="19" x2="19" y2="81"/><line x1="33" y1="8" x2="67" y2="92"/><line x1="67" y1="8" x2="33" y2="92"/><line x1="8" y1="33" x2="92" y2="67"/><line x1="8" y1="67" x2="92" y2="33"/></g><circle cx="50" cy="50" r="9" fill="#fff"/></svg>
+<div class="dmc"><div class="cr"><span class="ring"><img src="img/av/a_FL7B8THF3Q.jpg"></span><div><b>laura.gomez</b><p>Necesito un asesor inmobiliario <em>· 2m</em></p></div><i></i></div><div class="cr"><span class="ring"><img src="img/av/a_LXBEITMWN1.jpg"></span><div><b>andres.restrepo</b><p>Quiero comprar casa nueva <em>· 5m</em></p></div><i></i></div><div class="cr"><span class="ring"><img src="img/av/a_OGBFDCHPEZ.jpg"></span><div><b>mafe.ortiz</b><p>Busco casa en Envigado <em>· 8m</em></p></div><i></i></div><div class="cr"><span class="ring"><img src="img/av/a_KSXH58AKBR.jpg"></span><div><b>claudia.mejia</b><p>¿Me ayudas a encontrar apto? <em>· 12m</em></p></div><i></i></div><div class="cr"><span class="ring"><img src="img/av/a_TI7XCCOF5U.jpg"></span><div><b>daniela.ocampo</b><p>Estoy lista para comprar.<br>¡Ayúdame a cerrar! <em>· 18m</em></p></div><i></i></div></div>
+<div class="igb"><svg width="84" height="84" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="#fff" stroke-width="2.2"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="#fff" stroke-width="2.2"/><circle cx="17.3" cy="6.7" r="1.3" fill="#fff"/></svg></div>
+<img class="jh" src="img/jhei.png">
+<div class="wm" style="color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.6);z-index:5">@jheitrujillob</div>
+</section>
+
+<!-- 2 PASOS 1 y 2 -->
+<section class="slide">
+  <div class="top"><p class="step">Paso 1</p><p class="t" style="font-size:54px">Abre la app de Claude<br>en tu computador</p></div>
+  <div style="position:absolute;left:0;right:0;top:330px"><div class="dock">
+    <i style="background:#2f7bf6"></i><i style="background:#30c45a"></i><i style="background:#f6c343"></i><i style="background:#f25c54"></i><i style="background:#8e8e93"></i><i style="background:#5856d6"></i><i style="background:#fbeee8;display:flex;align-items:center;justify-content:center;outline:4px solid var(--red)"><svg width="48" height="48"><use href="#cl"/></svg></i><i style="background:#555"></i></div></div>
+  <div class="top" style="top:520px"><p class="step">Paso 2</p><p class="t" style="font-size:54px">Crea un proyecto en Claude</p><p class="d">Entra a Proyectos, crea uno nuevo y ponle nombre.</p></div>
+  <div style="position:absolute;left:0;right:0;top:840px"><div class="modal">
+    <h5>Crear proyecto</h5>
+    <label>Nombre del proyecto</label><div class="inp">Máquina de clientes inmobiliaria</div>
+    <label>¿En qué estás trabajando?</label><div class="inp big">Describe tu proyecto, objetivos, tema…</div>
+    <div class="btns"><span>Cancelar</span><span class="k">Crear proyecto</span></div>
+  </div></div>
+  <div class="wm">@jheitrujillob</div>
+</section>
+
+<!-- 3 PASO 3 -->
+<section class="slide">
+  <div class="top"><p class="step">Paso 3</p><p class="t">Pídele a Claude<br>que te entreviste</p><p class="d">Copia este prompt en un chat nuevo dentro de tu proyecto.</p></div>
+  <div class="card" style="left:80px;right:80px;top:470px">
+    <div class="chead"><span class="logo"><svg width="34" height="34"><use href="#cl"/></svg>Claude</span><span class="pill">Proyecto ▾</span></div>
+    <div class="pr"><span class="lab">TU PROMPT</span>Quiero construir mi “Cerebro Inmobiliario”. Actúa como mi estratega de negocio y entrevístame con una pregunta a la vez sobre: mi nombre e inmobiliaria, las zonas donde trabajo, los clientes que atiendo, mi especialidad, mis años de experiencia, mis servicios, mi estilo de marca y mi cliente ideal. Espera mi respuesta antes de seguir. No inventes nada. Al final, crea un archivo llamado “Cerebro Inmobiliario.md” con todo lo que te dije y una sección de “Información pendiente” para lo que falte.</div>
+    <div class="msg"><span>Responder a Claude…</span><span>➜</span></div>
+  </div>
+  <div class="chk" style="top:1020px">
+    <div class="r"><span class="ic">1</span>Responde cada pregunta</div>
+    <div class="r"><span class="ic">2</span>Guarda “Cerebro Inmobiliario.md”</div>
+    <div class="r" style="border:0"><span class="ic">3</span>Revísalo y súbelo a los archivos del proyecto</div>
+  </div>
+  <div class="wm">@jheitrujillob</div>
+</section>
+
+<!-- 4 PASO 4 -->
+<section class="slide">
+  <div class="top"><p class="step">Paso 4</p><p class="t">Crea tu lead magnet</p><p class="d">Un lead magnet es un recurso gratis que le das a alguien<br>a cambio de sus datos de contacto.</p></div>
+  <div class="card" style="left:80px;right:80px;top:400px;padding:28px;display:grid;grid-template-columns:1.25fr 1fr;gap:24px;align-items:center">
+    <div><span class="badge">Ejemplo</span><p style="font-size:25px;line-height:1.4;margin-top:16px;color:#333">Alguien quiere mudarse a tu ciudad. Le ofreces gratis una <b>guía para mudarse</b>. Te la pide, te deja su contacto y ya tienes un cliente potencial para hacerle seguimiento.</p></div>
+    <div class="guide" style="position:relative;transform:rotate(3deg)"><div class="ph" style="height:200px;background-image:url(img/L9VZ6SOGBB.jpg)"></div><div class="gt"><b>Guía para mudarte</b><span>a tu nueva ciudad</span></div></div>
+  </div>
+  <p style="position:absolute;left:0;right:0;top:830px;text-align:center;font-weight:900;font-size:42px">Escoge tu guía</p>
+  <p style="position:absolute;left:0;right:0;top:884px;text-align:center;font-size:24px;color:#666">la que más le sirva a tu audiencia</p>
+  <div class="opt" style="left:60px;top:950px;width:300px;height:250px"><span class="ic">⌂</span><h5>Comprar tu primera vivienda</h5><p>Para quien va a comprar casa o apartamento por primera vez.</p></div>
+  <div class="opt on" style="left:390px;top:950px;width:300px;height:250px"><span class="ic">◉</span><h5>Mudarte a tu ciudad</h5><p>Para quien planea vivir en tu zona.</p><span class="badge" style="margin-top:10px;font-size:16px">Recomendada</span></div>
+  <div class="opt" style="left:720px;top:950px;width:300px;height:250px"><span class="ic">$</span><h5>Vender tu casa</h5><p>Para propietarios que están pensando en vender.</p></div>
+  <div class="wm">@jheitrujillob</div>
+</section>
+
+<!-- 5 PASO 5 -->
+<section class="slide">
+  <div class="top"><p class="step">Paso 5</p><p class="t">Pídele a Claude el<br>contenido de la guía</p><p class="d">Abre un chat nuevo en el proyecto: Claude ya conoce tu<br>“Cerebro Inmobiliario”. Copia este prompt.</p></div>
+  <div class="card" style="left:60px;width:600px;top:470px">
+    <div class="chead"><span class="logo"><svg width="34" height="34"><use href="#cl"/></svg>Claude</span><span class="pill">Proyecto ▾</span></div>
+    <div class="pr" style="font-size:20px">Usa mi Cerebro Inmobiliario. Escribe una guía completa llamada “[NOMBRE DE LA GUÍA]” para [MI CLIENTE IDEAL] en [MI CIUDAD].<br><br>Incluye: portada, introducción, índice, consejos prácticos, información local, una lista de chequeo, preguntas frecuentes, quién soy y mis servicios, y un siguiente paso claro para que me escriban.<br><br>No inventes datos del mercado ni testimonios: si falta algo, pregúntame.</div>
+    <div class="msg"><span>Responder a Claude…</span><span>➜</span></div>
+  </div>
+  <div class="side" style="top:490px"><span class="ic" style="margin-bottom:14px">✎</span><h4>Esto crea una guía completa con:</h4><ul>
+    <li>Portada e introducción</li><li>Índice</li><li>Consejos para tu cliente</li><li>Información de tu zona</li><li>Lista de chequeo</li><li>Preguntas frecuentes</li><li>Tus servicios y contacto</li></ul></div>
+  <div class="guide" style="left:110px;top:1000px;width:300px;transform:rotate(-4deg)"><div class="ph" style="height:150px;background-image:url(img/LJ515CPAKI.jpg)"></div><div class="gt"><b>Tu primera vivienda</b><span>Guía paso a paso</span></div></div>
+  <p class="hw" style="position:absolute;left:470px;top:1050px;font-size:46px;transform:rotate(-3deg)">Una guía que convierte<br>visitas en clientes ↙</p>
+  <div class="wm">@jheitrujillob</div>
+</section>
+
+<!-- 6 PASO 6 -->
+<section class="slide">
+  <div class="top"><p class="step">Paso 6</p><p class="t">Diseña tu guía</p><p class="d">Pídele a Claude que convierta el contenido en un PDF<br>profesional, con tu marca, que se vea bien en el celular.</p></div>
+  <div class="card" style="left:60px;width:600px;top:420px">
+    <div class="chead"><span class="logo"><svg width="34" height="34"><use href="#cl"/></svg>Claude</span><span class="pill">Proyecto ▾</span></div>
+    <div class="pr" style="font-size:20px">Convierte esta guía en un PDF profesional de varias páginas. Usa mis colores de marca y mi logo, fotos de casas, letra fácil de leer en el celular y una página final con mi foto, mi WhatsApp y un botón para agendar una cita.</div>
+    <div class="msg"><span>Responder a Claude…</span><span>➜</span></div>
+  </div>
+  <div class="side" style="top:440px"><span class="ic" style="margin-bottom:14px">◧</span><h4>Incluye en el diseño:</h4><ul>
+    <li>Tu logo y tus colores</li><li>Tu información de contacto</li><li>Un estilo limpio y profesional</li><li>Fácil de leer en celular y computador</li><li>Fotos de calidad</li></ul></div>
+  <div class="guide" style="left:70px;top:870px;width:290px"><div class="ph" style="height:250px;background-image:url(img/UIU7D31EDY.jpg)"></div><div class="gt"><b>Compra tu primera vivienda</b><span>Tu guía paso a paso</span></div></div>
+  <div class="guide" style="left:390px;top:900px;width:300px;padding:18px;font-size:17px;line-height:1.6;color:#444"><b style="font-size:22px;color:var(--red)">Índice</b><br>1. ¿Cuánto puedo pagar?<br>2. Crédito o leasing<br>3. Zonas y barrios<br>4. Lista de chequeo<br>5. Preguntas frecuentes<br>6. Hablemos</div>
+  <div class="guide" style="left:720px;top:880px;width:290px"><div class="ph" style="height:170px;background-image:url(img/87ONRC5PWV.jpg)"></div><div class="gt" style="font-size:17px;color:#444"><b style="font-size:22px">Lista de chequeo</b>☐ Presupuesto definido<br>☐ Preaprobación del banco<br>☐ Visitas agendadas</div></div>
+  <div class="wm">@jheitrujillob</div>
+</section>
+
+<!-- 7 PASO 7 -->
+<section class="slide">
+  <div class="top"><p class="step">Paso 7</p><p class="t" style="font-size:58px">Crea 30 días de contenido<br>mejor que tu competencia</p><p class="d">Pídele a Claude un plan de 30 días con ideas, ganchos y captions.</p></div>
+  <div class="card" style="left:60px;width:600px;top:430px">
+    <div class="chead"><span class="logo"><svg width="34" height="34"><use href="#cl"/></svg>Claude</span><span class="pill">Chat nuevo</span></div>
+    <div class="pr" style="font-size:20px">Crea un plan de contenido de 30 días para Instagram. Enfócate en temas que hoy le interesan a la gente sobre vivienda en mi ciudad, preguntas comunes de compradores y vendedores, y consejos útiles. Para cada día dame: idea del post, formato (reel o carrusel), gancho, caption y llamado a la acción. Que cada publicación lleve a pedir mi guía gratis.</div>
+    <div class="msg"><span>Responder a Claude…</span><span>➜</span></div>
+  </div>
+  <div class="side" style="top:450px"><span class="ic" style="margin-bottom:14px">▦</span><h4>Pídele que incluya:</h4><ul>
+    <li>30 días de ideas</li><li>Temas del momento en tu zona</li><li>Ganchos que detienen el scroll</li><li>Captions listos</li><li>Llamado a la acción</li><li>Mejores horas para publicar</li></ul></div>
+  <div class="card" style="left:120px;top:960px;width:460px;border-radius:30px;padding:20px">
+    <div style="display:flex;gap:16px;align-items:center"><div class="ph" style="width:90px;height:90px;border-radius:50%;background-image:url(img/jhei.png);background-color:#f2541b;background-size:150%;background-position:50% 20%"></div><div style="font-size:18px"><b style="font-size:22px">tu.inmobiliaria</b><br>Te ayudo a encontrar tu casa ideal<br><span style="color:var(--red);font-weight:700">Pide tu guía gratis ↓</span></div></div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:16px"><div class="ph" style="height:120px;background-image:url(img/LJ515CPAKI.jpg)"></div><div class="ph" style="height:120px;background-image:url(img/87ONRC5PWV.jpg)"></div><div class="ph" style="height:120px;background-image:url(img/UIU7D31EDY.jpg)"></div></div>
+  </div>
+  <p class="hw" style="position:absolute;left:650px;top:1010px;font-size:50px;transform:rotate(-4deg)">Mejor contenido.<br>Más alcance.<br>Más clientes.</p>
+  <div class="wm">@jheitrujillob</div>
+</section>
+
+<!-- 8 PASO 8 -->
+<section class="slide">
+  <div class="top"><p class="step">Paso 8</p><p class="t" style="font-size:58px">Convierte tu contenido en leads<br>y tus leads en clientes</p><p class="d">Conecta ManyChat con tu Instagram: cuando alguien comenta<br>tu palabra clave, le llega la guía por mensaje directo.</p></div>
+  <div class="flow" style="top:470px">
+    <div class="fs"><span class="n">1</span><h6>Ven tu post</h6><p>Alguien encuentra tu contenido y comenta la palabra clave.</p></div>
+    <div class="fs"><span class="n">2</span><h6>Reciben tu guía</h6><p>ManyChat le envía la guía por DM al instante.</p></div>
+    <div class="fs"><span class="n">3</span><h6>Te escriben</h6><p>Cuando necesitan tu servicio, ya confían en ti.</p></div>
+    <div class="fs"><span class="n">4</span><h6>Te eligen</h6><p>Tu contenido útil ya hizo la mitad de la venta.</p></div>
+  </div>
+  <div class="wrap" style="left:90px;top:740px;transform:scale(.52)"><div class="phone" style="position:relative;width:580px">
+    <div class="scr" style="height:1060px">
+      <div class="sb"><span>9:41</span><span>●●● ◔ ▮</span></div>
+      <div class="th"><svg width="30" height="30" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg><img src="img/av/a_FL7B8THF3Q.jpg"><div><b>Laura Gómez</b><span>laura.gomez · Activa ahora</span></div></div>
+      <div class="msgs">
+        <span class="tm">Hoy 9:38</span>
+        <div class="b in">Comenté GUÍA en tu post 🙌</div>
+        <div class="b out">¡Hola Laura! Gracias por escribir. Aquí tienes tu guía para comprar tu primera vivienda 👇</div>
+        <div class="att"><div class="ph" style="background-image:url(img/LJ515CPAKI.jpg)"></div><p>Guía: Tu primera vivienda<span>PDF · 12 páginas</span></p></div>
+        <div class="b out">¿Ya tienes una zona en mente para buscar?</div>
+        <span class="tm">9:41</span>
+        <div class="b in">Sí, en Laureles o Envigado. ¿Me ayudas a buscar un apartamento? 🏡</div>
+      </div>
+      <div class="comp">Enviar mensaje…</div>
+    </div>
+  </div></div><div class="chk" style="left:580px;right:60px;top:820px">
+    <p style="font-weight:900;font-size:30px;margin-bottom:6px"><span class="badge">El sistema</span></p>
+    <div class="r" style="font-size:24px"><span class="ic">1</span>Contenido que atrae</div>
+    <div class="r" style="font-size:24px"><span class="ic">2</span>Lead magnet que captura</div>
+    <div class="r" style="font-size:24px"><span class="ic">3</span>ManyChat que responde</div>
+    <div class="r" style="font-size:24px;border:0"><span class="ic">4</span>Tú cierras la venta</div>
+  </div>
+  <div class="wm">@jheitrujillob</div>
+</section>
+
+<!-- 9 CTA -->
+<section class="slide">
+  <div class="top" style="top:70px"><p style="font-weight:600;font-size:54px">Si quieres este</p><p class="t" style="font-size:70px;margin-top:8px"><span style="color:var(--red)">sistema con IA</span> para<br>tu negocio</p></div>
+  <div class="wrap" style="left:300px;top:330px;transform:scale(.52)"><div class="phone" style="position:relative;width:580px"><div class="scr" style="height:1060px"><div class="sb"><span>9:41</span><span>●●● ◔ ▮</span></div>
+      <div class="nav"><svg width="34" height="34" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg><b>tu.inmobiliaria ⌄</b><svg width="34" height="34" viewBox="0 0 24 24"><path d="M4 20h4l11-11-4-4L4 16v4z" fill="none" stroke="#fff" stroke-width="2"/></svg></div>
+      <div class="search">🔍&nbsp; Buscar</div>
+      <div class="tabs"><span>Mensajes</span><span>Solicitudes (12)</span></div>
+      <div class="row u"><img src="img/av/a_FL7B8THF3Q.jpg"><div class="tx"><div class="n">Laura Gómez</div><div class="m">Hola, ¿me envías la guía? · 1 min</div></div><i class="dot"></i></div>
+      <div class="row u"><img src="img/av/a_LXBEITMWN1.jpg"><div class="tx"><div class="n">Andrés Restrepo</div><div class="m">Quiero vender mi casa en Envigado · 3 min</div></div><i class="dot"></i></div>
+      <div class="row u"><img src="img/av/a_OGBFDCHPEZ.jpg"><div class="tx"><div class="n">Mafe Ortiz</div><div class="m">GUÍA · 8 min</div></div><i class="dot"></i></div>
+      <div class="row u"><img src="img/av/a_KSXH58AKBR.jpg"><div class="tx"><div class="n">Claudia Mejía</div><div class="m">¿Agendamos una visita el sábado? · 15 min</div></div><i class="dot"></i></div>
+      <div class="row"><img src="img/av/a_XKNXHW017D.jpg"><div class="tx"><div class="n">Valentina R.</div><div class="m">Me encantó la guía, gracias · 1 h</div></div><svg class="cam" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="3" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="12" cy="13.5" r="3.5" fill="none" stroke="#fff" stroke-width="1.8"/></svg></div>
+      <div class="row"><img src="img/av/a_TI7XCCOF5U.jpg"><div class="tx"><div class="n">Daniela Ocampo</div><div class="m">¿Tienes apartamentos en Laureles? · 2 h</div></div><svg class="cam" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="3" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="12" cy="13.5" r="3.5" fill="none" stroke="#fff" stroke-width="1.8"/></svg></div>
+      <div class="row"><img src="img/av/a_ZEXCRGH1GV.jpg"><div class="tx"><div class="n">Sara Henao</div><div class="m">Visto · 3 h</div></div><svg class="cam" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="3" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="12" cy="13.5" r="3.5" fill="none" stroke="#fff" stroke-width="1.8"/></svg></div>
+    </div></div></div><div class="igl" style="left:220px;top:300px;transform:rotate(-12deg) scale(.75)"><svg width="92" height="92" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="#fff" stroke-width="2"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="#fff" stroke-width="2"/><circle cx="17.3" cy="6.7" r="1.2" fill="#fff"/></svg></div><svg style="position:absolute;right:130px;top:560px" width="220" height="220"><use href="#cl"/></svg>
+  <div style="position:absolute;left:0;right:0;top:1000px;text-align:center">
+    <p style="font-weight:900;font-size:80px">Comenta <span style="color:var(--red)">“TALLER”</span></p>
+    <p style="font-size:34px;color:#444;margin-top:14px">y te llevo a mi taller de contenido que vende con IA</p>
+  </div>
+  <div class="wm">@jheitrujillob</div>
+</section>
+</body></html>

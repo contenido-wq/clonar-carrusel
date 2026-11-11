@@ -1,76 +1,93 @@
 # clonar-carrusel
 
-Skill para Claude que convierte un carrusel viral de Instagram en **tu** carrusel: la misma estructura, el mismo ritmo y la misma estética, pero con tu tema, tu voz, tus pruebas reales y tu oferta.
+Skill para Claude que convierte un carrusel viral de Instagram en **tu** carrusel: la misma estructura, el mismo ritmo y la misma estética, pero con tu tema, tu voz, tus pruebas reales y tu oferta. Trae **11 estilos listos para usar** y te deja guardar los tuyos.
 
 Creada por **Jhei Trujillo** ([@jheitrujillob](https://instagram.com/jheitrujillob)), estratega digital y creador de AIVI.
 
-![Ejemplo: estilo cuaderno con mapas mentales](docs/ejemplo-cuaderno.png)
-![Ejemplo: estilo tutorial paso a paso](docs/ejemplo-tutorial.png)
+## Empieza en 3 pasos (Claude.ai, sin programar)
 
-## Qué hace
+1. **Descarga** [`clonar-carrusel.zip`](https://github.com/contenido-wq/clonar-carrusel/raw/main/dist/clonar-carrusel.zip). No lo descomprimas.
+2. En [claude.ai](https://claude.ai) ve a **Configuración → Capacidades**, activa **ejecución de código y creación de archivos** y, en **Skills**, sube el ZIP.
+3. Abre un chat nuevo y escribe:
 
-1. **Te entrevista primero** (máximo 10 preguntas, por texto o nota de voz): tu Instagram, a qué te dedicas, quién es tu cliente, para qué es el carrusel (seguidores, autoridad, leads o venta) y a qué lo quieres llevar (curso, taller, mentoría o producto). Guarda tus respuestas para no preguntarte lo mismo la próxima vez.
-2. **Captura el carrusel modelo** desde el link de Instagram, sin que tomes screenshots.
-3. **Saca su ADN**: fórmula del gancho, rol de cada slide, paleta, tipografías y por qué funciona.
-4. **Reescribe el copy** en modo *espejo* (mismo gancho, adaptado) o *inspirado* (misma estructura con tu propio ángulo). Nunca traduce frase por frase el contenido de otro creador ni inventa cifras: lo que falta queda marcado como `[DATO A CONFIRMAR]`.
-5. **Diseña y renderiza** los slides en PNG de 1080x1350, con tu @ y tu foto si la das.
-6. **Revisa la calidad** con una hoja de comparación (original contra el tuyo) y te entrega el caption listo y 2 ganchos alternativos.
+> ¿Qué estilos de carrusel tienes?
 
-### Biblioteca de estilos
+Claude te manda el catálogo, eliges uno y te pide solo tu tema, tu @ y tu llamada a la acción.
 
-Guarda los carruseles que te gustan como **estilos** y replícalos con otros temas sin volver a pasar un link:
+¿Claude Code, problemas o capturas de pantalla? 👉 **[Guía de instalación completa](INSTALACION.md)**
 
-- *"Guarda este como estilo"*: queda con nombre, plantilla, muestras y ADN.
-- *"¿Qué estilos tengo?"*: te manda un catálogo visual.
-- *"Hazme uno sobre X con el de cuaderno"*: reutiliza la plantilla y solo reescribe el contenido.
-- Opcional: si pasas métricas (alcance, guardados, comentarios), te arma un ranking según tu objetivo.
+## Los 11 estilos incluidos
 
-![Catálogo de estilos](docs/catalogo.png)
+![Catálogo de estilos](docs/catalogo.jpg)
 
-## Instalación
+| Estilo | Slides | Para qué sirve |
+|---|---|---|
+| **Antes y después oscuro** | 8 | Fondo negro, tu foto y comparaciones antes/después con imagen. Ideal para mostrar transformaciones hechas con IA. |
+| **Cuaderno mapas mentales** | 6 | Hoja de cuaderno con 4 mapas mentales y CTA en óvalo rojo. Ideal para marcos de 4 categorías. |
+| **Frases tipo tweet** | 8 | Fondo blanco, tu avatar con nombre y @, una frase grande por slide. Caption corto. |
+| **Libreta azul a mano** | 6 | Hoja de libreta con letra a mano azul y dibujos tipo boceto. Ideal para secretos, trucos o pasos numerados. |
+| **Lista de herramientas oscuro** | 14 | Portada pixelada naranja y una herramienta por slide con su captura. Ideal para "X herramientas para tu negocio". |
+| **Notas a mano rojas** | 6 | Una frase tajante por slide en letra a mano roja, palabra clave en MAYÚSCULAS. Ideal para reglas, mitos o verdades rápidas. |
+| **Paso a paso con foto y apps** | 9 | Portada con tu foto y un celular con mensajes; luego Paso 1, Paso 2… con capturas. Ideal para tutoriales "Claude para tu nicho". |
+| **Reflexión cinematográfica** | 7 | Foto en blanco y negro oscura, serif elegante y una palabra en cursiva roja. Ideal para reflexiones, fe o mentalidad. |
+| **Sistemas con diagramas** | 10 | Tu foto de fondo oscurecida, serif blanco y un diagrama de líneas por slide. Ideal para explicar sistemas o procesos. |
+| **Titulares negros bold** | 9 | Fondo blanco, titulares gigantes en negro, un consejo numerado por slide y CTA en bloque negro. Ideal para listas de consejos o errores. |
+| **Tutorial paso a paso UI** | 8 | Fondo crema, mocks de interfaz, pasos 1 a 4 y prompt copiable. Ideal para mostrar un flujo con IA. |
 
-👉 **[Guía de instalación paso a paso](INSTALACION.md)**, para cualquier persona, sin necesidad de programar.
+Los ejemplos están hechos con la marca de @jheitrujillob. Cuando los usas, Claude pone **tu** @, tu nombre, tu foto y tu palabra clave.
 
-- **Claude.ai:** descarga [`clonar-carrusel.zip`](https://github.com/contenido-wq/clonar-carrusel/raw/main/dist/clonar-carrusel.zip) y súbelo en *Configuración → Capacidades → Skills*.
-- **Claude Code:**
-  ```bash
-  git clone https://github.com/contenido-wq/clonar-carrusel ~/.claude/skills/clonar-carrusel
-  cd ~/.claude/skills/clonar-carrusel && npm install playwright && npx playwright install chromium && pip install pillow
-  ```
+## Cómo se usa
+
+**Con un estilo incluido:**
+> Hazme un carrusel sobre "3 errores que hacen que tus reels no vendan" con el estilo Titulares negros bold. Soy @tuusuario y la palabra es MENTORIA.
+
+**Modelando un carrusel que viste en Instagram:**
+> Quiero modelar este carrusel para mi cuenta: https://www.instagram.com/p/XXXX/
+
+**Sin preguntas:**
+> Modela este y arranca ya: (link). Soy @usuario, vendo una mentoría, la palabra es MENTORIA.
 
 Si tu entorno no puede entrar a Instagram, la skill te pide capturas de pantalla de los slides y sigue igual.
 
-## Uso
+## Agrega tus propios estilos
 
-Pásale a Claude el link y lo que quieres:
+1. Modela un carrusel que te guste (o pásale varios links "para guardarlos").
+2. Al terminar, di: **"Guárdalo como estilo"**. Queda con nombre, plantilla, muestras y ADN, y aparece en el catálogo junto a los 11 incluidos.
+3. Desde ahí: *"Hazme otro sobre X con mi estilo de …"*.
 
-> Quiero modelar este carrusel para mi cuenta: https://www.instagram.com/p/XXXX/
+**En Claude.ai** cada chat empieza desde cero, así que pide además: **"Empaqueta la skill con mis estilos"**. Claude te devuelve un `clonar-carrusel.zip` nuevo: borra la versión anterior en *Configuración → Skills* y sube ese. Tus estilos quedan disponibles en todos tus chats, y puedes pasarle ese ZIP a tu equipo.
 
-> Hazme uno sobre "3 errores que hacen que tus reels no vendan" con mi estilo de cuaderno.
+**En Claude Code** tus estilos se guardan en la carpeta `carruseles/estilos/` y no hay que hacer nada más.
 
-> Modela este y arranca ya, sin preguntas: (link). Soy @usuario, vendo una mentoría, la palabra es MENTORIA.
+## Qué hace por dentro
+
+1. **Te entrevista** (máximo 10 preguntas, por texto o nota de voz) y guarda tus respuestas para no repetirlas.
+2. **Captura el carrusel modelo** desde el link, sin screenshots.
+3. **Saca su ADN**: fórmula del gancho, rol de cada slide, paleta, tipografías y por qué funciona.
+4. **Reescribe el copy** en modo *espejo* o *inspirado*. Nunca traduce frase por frase a otro creador ni inventa cifras: lo que falta queda como `[DATO A CONFIRMAR]`.
+5. **Diseña y renderiza** los slides en PNG de 1080x1350, con tu @ y tu foto.
+6. **Revisa la calidad** contra el original y te entrega el ZIP, el caption y 2 ganchos alternativos.
 
 ## Estructura
 
 ```
 SKILL.md                  # instrucciones de la skill (flujo y modos)
+estilos/                  # los 11 estilos incluidos (plantilla, muestras y ADN de cada uno)
 references/
   entrevista.md           # las 10 preguntas y cómo usar las respuestas
-  estilos.md              # biblioteca de estilos: guardar, elegir, replicar
+  estilos.md              # estilos: elegir, replicar, guardar y empaquetar
 scripts/
   capturar.js             # baja los slides y el caption de un post de Instagram
   render.js               # HTML → un PNG de 1080x1350 por cada <section class="slide">
   comparar.py             # hoja de comparación original contra nuevo
-  estilos.py              # guardar, listar, catálogo, rendimiento y ranking de estilos
-evals/                    # casos de prueba (formato de `claude plugin eval`)
+  estilos.py              # listar, catálogo, usar, guardar, empaquetar, rendimiento
 dist/clonar-carrusel.zip  # la skill empaquetada para subir a Claude.ai
+evals/                    # casos de prueba (formato de `claude plugin eval`)
 ```
 
-Lo que generas queda en `carruseles/` (perfil, proyectos y biblioteca de estilos), y esa carpeta está ignorada por git.
+Lo que generas queda en `carruseles/` (perfil, proyectos y estilos propios), y esa carpeta está ignorada por git.
 
 ## Pruebas
-
-Los casos de `evals/` cubren 4 situaciones: un cliente nuevo que responde por nota de voz, un cliente con perfil guardado, alguien que dice "arranca sin preguntas" y la replicación de un estilo guardado. Con Claude Code:
 
 ```bash
 claude plugin eval . --allow-tools Write,Edit,Bash --scaffold
@@ -78,7 +95,7 @@ claude plugin eval . --allow-tools Write,Edit,Bash --scaffold
 
 ## Uso responsable
 
-Modelar es tomar la **estructura** de lo que funciona, no copiar el contenido de otra persona. La skill escribe el copy desde cero, no redistribuye los slides originales y no dibuja logos de otras marcas. Usa las capturas solo como referencia de trabajo.
+Modelar es tomar la **estructura** de lo que funciona, no copiar el contenido de otra persona. La skill escribe el copy desde cero, no redistribuye los slides originales y no dibuja logos de otras marcas.
 
 ## Licencia
 

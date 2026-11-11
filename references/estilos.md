@@ -1,13 +1,20 @@
 # Biblioteca de estilos
 
-Un **estilo** es un carrusel ya resuelto (diseño, estructura de slides, fórmula del gancho y plantilla que renderiza) guardado con nombre para reutilizarlo con otros temas. La biblioteca vive en `carruseles/estilos/`, una carpeta por estilo:
+Un **estilo** es un carrusel ya resuelto (diseño, estructura de slides, fórmula del gancho y plantilla que renderiza) guardado con nombre para reutilizarlo con otros temas. Hay dos bibliotecas, y `estilos.py` muestra las dos juntas:
+
+| Biblioteca | Dónde vive | Quién la llena |
+|---|---|---|
+| **Incluidos** | carpeta `estilos/` de la skill (junto a `scripts/`) | vienen con la skill: 11 estilos de ejemplo de @jheitrujillob. Solo lectura |
+| **Propios** | `carruseles/estilos/` de la persona | cada persona, con `guardar`. Si un propio tiene el mismo id que un incluido, se usa el propio |
+
+Cada estilo es una carpeta:
 
 ```
-carruseles/estilos/<id>/
+<biblioteca>/<id>/
 ├── estilo.json      # nombre, modelo de origen, ADN completo, nota, rendimiento[]
 ├── plantilla.html   # el carrusel tal como quedó (renderiza solo)
 ├── build.py         # si el HTML se generó por script
-├── muestras/        # los PNG finales, para comparar y para mostrar el estilo
+├── muestras/        # los slides finales (PNG o JPG), para comparar y para mostrar el estilo
 └── fotos, fuentes   # recursos que usa la plantilla
 ```
 
@@ -31,8 +38,8 @@ python3 -I scripts/estilos.py guardar carruseles/<codigo> "Nombre del estilo" --
 **La persona elige.** Ella conoce su audiencia y sabe qué le funcionó, así que no hace falta pedirle estadísticas para decidir.
 
 ```bash
-python3 -I scripts/estilos.py catalogo carruseles/estilos/catalogo_estilos.png   # portada + 2 slides de cada estilo
-python3 -I scripts/estilos.py listar                                             # versión en texto, con la nota de cada uno
+python3 -I scripts/estilos.py catalogo carruseles/catalogo_estilos.png   # portada + 2 slides de cada estilo (incluidos y propios)
+python3 -I scripts/estilos.py listar                                     # versión en texto, con la nota de cada uno
 ```
 
 - **Si nombró el estilo** ("con el de cuaderno", "el tutorial"), úsalo directamente. Si el nombre es ambiguo, toma el más parecido y dilo en una línea.
@@ -58,7 +65,26 @@ python3 -I scripts/estilos.py ranking --objetivo leads   # seguidores | autorida
 
 1. Define el estilo como en §2. Lo elige la persona; si no dijo cuál, mándale el catálogo.
 2. Lee `estilo.json` (`ver "Nombre"`): el ADN trae la fórmula del gancho, el rol de cada slide y la densidad de palabras. Esa es la estructura que se repite.
-3. Copia la carpeta del estilo a un proyecto nuevo, `carruseles/<tema-AAAAMMDD>/`, y reescribe solo el contenido de la plantilla, o de `build.py` si existe, con el tema nuevo. Respeta el mismo número de slides, los mismos roles y la misma densidad. El copy sigue las reglas del Paso 3: voz de la persona, pruebas reales y `[DATO A CONFIRMAR]`.
-4. Renderiza y compara contra las muestras del estilo: `comparar.py carruseles/estilos/<id>/muestras final/ comparacion.png`. Debe verse como el mismo estilo con otro tema.
+3. Copia el estilo a un proyecto nuevo:
+   ```bash
+   python3 -I scripts/estilos.py usar "Nombre" carruseles/<tema-AAAAMMDD>
+   ```
+   Deja `carrusel.html` (y `build.py` si el estilo se genera por script). Reescribe solo el contenido, en `build.py` si existe o en el HTML si no, con el tema nuevo. Respeta el mismo número de slides, los mismos roles y la misma densidad. El copy sigue las reglas del Paso 3: voz de la persona, pruebas reales y `[DATO A CONFIRMAR]`.
+4. **Si es un estilo incluido**, cambia también la identidad: @, nombre, foto (la de la persona o un recuadro punteado si no dio una), palabra del CTA y oferta. Busca en el HTML `jheitrujillob`, `Jhei`, `TALLER` y las fotos de `foto/` antes de renderizar.
+5. Renderiza y compara contra las muestras que indica `usar`: `comparar.py <carpeta del estilo>/muestras final/ comparacion.png`. Debe verse como el mismo estilo con otro tema.
 
 **Aviso de fatiga:** si la persona usa el mismo estilo en varias publicaciones seguidas, recomiéndale alternarlo con otro. La audiencia se acostumbra a un formato y el rendimiento baja aunque el estilo sea bueno. Una buena regla es no repetir el mismo estilo en 2 posts seguidos del feed.
+
+## 5. Conservar los estilos propios
+
+**Claude Code (computadora o nube con repo):** lo que se guarda en `carruseles/estilos/` se queda ahí. No hay que hacer nada más.
+
+**Claude.ai:** cada chat empieza con archivos nuevos, así que un estilo guardado se pierde al cerrar el chat. Para que la persona lo tenga siempre:
+
+```bash
+python3 -I scripts/estilos.py empaquetar carruseles/clonar-carrusel.zip
+```
+
+Arma la skill completa con los estilos incluidos más los propios (aligerados para que el ZIP pese poco). Mándale el ZIP y dile: "En Configuración → Capacidades → Skills, elimina la versión anterior de clonar-carrusel y sube este ZIP. Desde ahí tu estilo aparece en el catálogo en cualquier chat."
+
+Para compartir un estilo con otra persona, sirve el mismo ZIP: al subirlo, tiene la skill con ese estilo.

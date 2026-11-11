@@ -1,0 +1,34 @@
+{
+  "nombre": "Frases tipo tweet",
+  "id": "frases-tipo-tweet",
+  "creado": "2026-11-09",
+  "fuente_modelo": "https://www.instagram.com/p/DfVwAlupSkt/ (@ojeancarlo.s)",
+  "proyecto_origen": "",
+  "slides": 8,
+  "nota": "Fondo blanco, tu avatar + nombre + @, una frase grande por slide. CTA TALLER en el último. Caption corto.",
+  "adn": {
+    "fuente": "https://www.instagram.com/p/DfVwAlupSkt/ (@ojeancarlo.s)",
+    "slides": 8,
+    "tipo": "Frases tipo tweet",
+    "paleta": {
+      "fondo": "#ffffff",
+      "texto": "#0f1419",
+      "nombre": "#2c3640",
+      "usuario": "#536471"
+    },
+    "tipografias": {
+      "todo": "Inter 400/600/700"
+    },
+    "narrativa": {
+      "estructura": "1 frase por slide estilo tweet: avatar redondo + nombre + @usuario + frase grande. Último slide con CTA en negrita.",
+      "por_que_funciona": [
+        "Se lee en 2 segundos",
+        "Parece opinión personal, no anuncio",
+        "Fácil de compartir y guardar"
+      ]
+    },
+    "como_replicar": "Cambia la lista tw en carrusel.html (o el texto de cada <p class=x>) y la foto foto/avatar.png."
+  },
+  "rendimiento": [],
+  "incluido": true
+}

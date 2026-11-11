@@ -33,11 +33,27 @@ Elige el camino según cómo usas Claude. Si no sabes cuál, empieza por la **Op
 > Tu plan de Claude tiene que permitir skills. Si no ves la sección, revisa tu plan o pregúntale al administrador de tu organización.
 
 ### 4. Úsala
-Abre un chat nuevo y escribe algo como:
+Abre un chat nuevo y escribe:
+
+> ¿Qué estilos de carrusel tienes?
+
+Claude te manda el catálogo con los 11 estilos incluidos. Elige uno y dile tu tema, tu @ y tu palabra clave. También puedes pasarle un link:
 
 > Quiero modelar este carrusel para mi cuenta: https://www.instagram.com/p/XXXX/
 
 Claude te va a hacer una entrevista corta (máximo 10 preguntas) y luego arma tu carrusel.
+
+### 5. Guarda tus propios estilos
+En Claude.ai cada chat empieza desde cero, así que un estilo guardado solo dura ese chat, a menos que lo metas en tu skill:
+
+1. Cuando termines un carrusel que te guste, di **"Guárdalo como estilo y empaqueta la skill con mis estilos"**.
+2. Claude te entrega un `clonar-carrusel.zip` nuevo.
+3. En **Configuración → Capacidades → Skills**, elimina la versión anterior de **clonar-carrusel** y sube el ZIP nuevo.
+
+Desde ahí tu estilo aparece en el catálogo en cualquier chat. Ese mismo ZIP sirve para compartir tus estilos con tu equipo.
+
+### Actualizar a la última versión
+Descarga otra vez el ZIP del paso 1 y súbelo en lugar del anterior. Si tenías estilos propios, primero pídele a Claude, en un chat, que empaquete la skill con tus estilos, para no perderlos.
 
 **Si te dice que no puede abrir Instagram:** haz capturas de pantalla de cada slide del carrusel (en orden) y súbelas al chat. La skill sigue igual con esas imágenes.
 
@@ -75,7 +91,7 @@ Abre Claude Code en la carpeta donde quieras guardar tus carruseles y escribe:
 
 > Quiero modelar este carrusel: https://www.instagram.com/p/XXXX/
 
-Los resultados quedan en la carpeta `carruseles/` de donde abriste Claude Code.
+Los resultados quedan en la carpeta `carruseles/` de donde abriste Claude Code. Los 11 estilos incluidos vienen con la skill, y los que guardes quedan en `carruseles/estilos/` sin hacer nada más. Para ver el catálogo, pregunta: *"¿Qué estilos de carrusel tienes?"*
 
 ### Actualizar a la última versión
 ```bash
@@ -107,6 +123,7 @@ Guía oficial de acceso de red: https://code.claude.com/docs/en/cloud-environmen
 | `Cannot find module 'playwright'` | Ejecuta `npm install playwright` dentro de la carpeta de la skill (Opción B, paso 2). |
 | `ModuleNotFoundError: No module named 'PIL'` | Ejecuta `pip install pillow`. |
 | Las letras salen con una fuente rara | No cargó Google Fonts. Revisa tu conexión o permite `fonts.googleapis.com` y `fonts.gstatic.com`. |
+| El ZIP no sube a Claude.ai | Revisa que lo subiste sin descomprimir. Si con tus estilos propios pesa mucho, pídele a Claude que guarde menos muestras o quita estilos que ya no uses. |
 | Claude no usa la skill | Menciona algo como "modela este carrusel" o "clona este carrusel" junto al link. En Claude.ai, revisa que la skill esté activada. |
 | Solo capturó algunos slides | Instagram a veces muestra menos slides en su versión embebida. Sube capturas de los que faltan. |
 

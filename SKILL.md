@@ -1,6 +1,6 @@
 ---
 name: clonar-carrusel
-description: Modela un carrusel viral de Instagram adaptándolo a la marca, la voz y la oferta de una persona. Empieza con una entrevista corta (máximo 10 preguntas, por texto o nota de voz), captura los slides del post original, saca su ADN (gancho, estructura, diseño), reescribe el copy y renderiza PNG de 1080x1350 con hoja de comparación y caption listo. También guarda estilos en una biblioteca con catálogo visual y replica el estilo que la persona elija con temas nuevos, sin necesidad de un link (registrar métricas es opcional). Úsala siempre que alguien pase un link de instagram.com/p/… y pida "modelar", "clonar", "hacer uno igual", "adaptar este carrusel", "algo así para mi marca", o quiera crear un carrusel viral para ganar seguidores o llevar gente a un curso, taller, mentoría o producto, o pida "guardar este estilo", "usa mi estilo de…", "hazme otro como el de cuaderno", "qué estilos tengo guardados", aunque no diga "skill" ni "clonar".
+description: Modela un carrusel viral de Instagram adaptándolo a la marca, la voz y la oferta de una persona. Empieza con una entrevista corta (máximo 10 preguntas, por texto o nota de voz), captura los slides del post original, saca su ADN (gancho, estructura, diseño), reescribe el copy y renderiza PNG de 1080x1350 con hoja de comparación y caption listo. Trae 11 estilos listos para usar (con catálogo visual) y deja guardar estilos propios para replicarlos con temas nuevos, sin necesidad de un link (registrar métricas es opcional). Úsala siempre que alguien pase un link de instagram.com/p/… y pida "modelar", "clonar", "hacer uno igual", "adaptar este carrusel", "algo así para mi marca", o quiera crear un carrusel viral para ganar seguidores o llevar gente a un curso, taller, mentoría o producto, o pida "guardar este estilo", "usa mi estilo de…", "hazme otro como el de cuaderno", "qué estilos tienes", "hazme un carrusel sobre X", aunque no diga "skill" ni "clonar".
 ---
 
 # Clonar / modelar carruseles virales
@@ -13,11 +13,14 @@ El flujo toma un carrusel que ya funcionó y lo convierte en uno propio: misma e
 |---|---|
 | pasa un link y quiere su versión | **Modelar**: pasos 0 a 6 |
 | sube uno o varios carruseles "para guardarlos" | **Guardar estilos**: pasos 1, 2 y 4 por cada uno, y luego guardar (ver `references/estilos.md`) |
-| pide un tema "con el estilo X" o "con uno de mis estilos" | **Replicar**: entrevista corta (solo tema, objetivo y CTA), el estilo lo elige la persona (§2: catálogo si no dijo cuál), luego `references/estilos.md` §4 y los pasos 3 a 6 |
-| pregunta qué estilos tiene | **Catálogo**: `estilos.py catalogo` y mándale la imagen |
+| pide un carrusel sobre un tema, sin link, o "con el estilo X" | **Replicar**: entrevista corta (solo tema, objetivo y CTA), el estilo lo elige la persona (§2: catálogo si no dijo cuál), luego `references/estilos.md` §4 y los pasos 3 a 6 |
+| pregunta qué estilos hay | **Catálogo**: `estilos.py catalogo` y mándale la imagen |
+| quiere conservar sus estilos nuevos (sobre todo en Claude.ai) | **Empaquetar**: `references/estilos.md` §5 |
 | pasa métricas por su cuenta (opcional) | **Rendimiento**: `references/estilos.md` §3; no las pidas |
 
-Si la persona ya tiene estilos guardados (`carruseles/estilos/`) y pide un carrusel nuevo sin link, pregúntale en la entrevista si quiere modelar uno nuevo o usar uno de sus estilos. Mándale el catálogo visual.
+**La skill trae 11 estilos incluidos** (carpeta `estilos/` de la skill), además de los que cada persona guarde en `carruseles/estilos/`. `estilos.py listar` y `catalogo` muestran los dos. Si la persona pide un carrusel sin link, mándale el catálogo visual y pregúntale si quiere uno de esos estilos o modelar un carrusel nuevo desde un link.
+
+Los estilos incluidos son ejemplos de @jheitrujillob: al usarlos, cambia siempre el @, el nombre, la foto, la palabra del CTA y la oferta por los de la persona. Si la persona no es Jhei, nunca le entregues un carrusel con sus datos.
 
 ## Paso 0: entrevista
 
@@ -113,7 +116,7 @@ Corrige hasta que pase. Los problemas típicos son títulos que se parten encima
 3. Lista los `[DATO A CONFIRMAR]` y los pendientes: fotos, datos de la oferta, auto-DM activo.
 4. Cierra con una recomendación estratégica de una línea, conectada con su objetivo.
 
-Al final, ofrece en una línea guardar el carrusel como estilo en su biblioteca para reutilizarlo con otros temas.
+Al final, ofrece en una línea guardar el carrusel como estilo en su biblioteca para reutilizarlo con otros temas. En Claude.ai, si lo guarda, entrégale también la skill empaquetada con su estilo (`references/estilos.md` §5), porque allí los archivos no duran entre chats.
 
 Para cambios posteriores, edita el HTML o el script que lo genera, vuelve a renderizar y reenvía solo lo que cambió.
 
@@ -122,7 +125,7 @@ Para cambios posteriores, edita el HTML o el script que lo genera, vuelve a rend
 ```
 carruseles/
 ├── perfil.json                 # respuestas de la entrevista (se reutiliza)
-├── estilos/                    # biblioteca de estilos (ver references/estilos.md)
+├── estilos/                    # estilos propios (los incluidos viven en la carpeta estilos/ de la skill)
 └── <codigo_del_post>/
     ├── original/               # slides capturados + caption_original.txt
     ├── adn.json

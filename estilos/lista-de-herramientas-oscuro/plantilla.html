@@ -1,0 +1,123 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><title>10 skills de Claude</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Caveat:wght@500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#777;display:flex;flex-direction:column;gap:40px;align-items:center;padding:40px 0}
+.slide{position:relative;width:1080px;height:1350px;overflow:hidden;font-family:'Inter',sans-serif;color:#fff;background:radial-gradient(ellipse at 50% 0%,#2a2a2a 0%,#181818 45%,#121212 100%)}
+.hw{font-family:'Caveat',cursive;font-weight:500;color:#9b9b9b}
+.g{color:#f2541b}
+.wm{position:absolute;z-index:5;top:42px;left:48px;font-weight:600;font-size:26px;color:rgba(255,255,255,.7)}
+.cover .bg{position:absolute;inset:0;width:100%;height:100%}
+.cc{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.ct{font-weight:800;font-size:150px;line-height:.92;letter-spacing:-6px;margin:16px 0}
+.num{position:absolute;top:44px;right:52px;font-family:'JetBrains Mono',monospace;font-size:22px;color:#777}
+.sk > h2{position:absolute;top:110px;left:0;right:0;text-align:center;font-weight:700;font-size:72px;letter-spacing:-2px}
+.sk > .sub{position:absolute;top:212px;left:130px;right:130px;text-align:center;font-size:31px;line-height:1.3;color:#a8a8a8}
+.win{position:absolute;left:70px;right:70px;top:350px;height:720px;border-radius:30px;background:#0d0d0d;border:2px solid #2b2b2b;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.5)}
+.bar{height:46px;display:flex;gap:10px;align-items:center;padding-left:24px;background:#151515;border-bottom:1px solid #262626}
+.bar i{width:14px;height:14px;border-radius:50%;background:#3a3a3a}
+.shot{position:absolute;top:46px;left:0;right:0;bottom:0;background-size:cover;background-position:top center}
+.foot{position:absolute;left:150px;bottom:150px;display:flex;align-items:center;gap:18px}
+.foot .hw{font-size:40px;line-height:.9}
+.pill{display:inline-flex;align-items:center;gap:12px;border:2px solid #555;border-radius:40px;padding:12px 24px;font-weight:600;font-size:30px;background:#1c1c1c}
+.sw,.sfoot{font-family:'JetBrains Mono',monospace;font-size:22px;color:#777}
+.sw{position:absolute;right:60px;bottom:70px}
+.sfoot{position:absolute;left:52px;right:52px;bottom:52px;display:flex;justify-content:space-between}
+.promo{background:#f2541b}
+.pc{position:absolute;left:90px;right:90px;top:50%;transform:translateY(-50%);text-align:center;color:#160700}
+.pk{font-weight:600;font-size:40px}
+.pt{font-weight:800;font-size:124px;line-height:.95;letter-spacing:-5px;margin:26px 0 34px}
+.pd{font-size:36px;line-height:1.35;color:#2c1003}
+.promo .hw{color:#160700}
+.bio{display:inline-block;font-family:'Inter';font-weight:800;font-size:46px;background:#160700;color:#fff;border-radius:12px;padding:6px 20px;letter-spacing:2px;vertical-align:middle}
+.promo .wm{color:rgba(22,7,0,.7)}
+.cta{background:#ffffff;color:#111}
+.cta .wm{color:rgba(0,0,0,.6)}
+.ccx{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.q{font-weight:600;font-size:44px;color:#222}
+.cta .hw{color:#111}
+.kw{font-family:'JetBrains Mono',monospace;font-weight:500;font-size:150px;letter-spacing:6px;color:#111;background:#f2f2f2;border:3px solid #111;border-radius:28px;padding:6px 44px;margin:24px 0 36px}
+.cta .sfoot{color:#555}
+.quote{background:linear-gradient(170deg,#efc0b6 0%,#d99a8e 100%);color:#3a2422}
+.quote .wm{color:rgba(58,36,34,.7)}
+.qt{position:absolute;left:90px;right:150px;top:160px;font-weight:400;font-size:84px;line-height:1.08;letter-spacing:-2px;color:#3a2422}
+.qa{position:absolute;left:90px;bottom:170px;font-size:48px;color:#5a3c3a}
+.gh{position:absolute;top:46px;left:0;right:0;bottom:0;background:#0d1117;color:#e6edf3;font-family:-apple-system,'Segoe UI','Inter',sans-serif;overflow:hidden}
+.crumb{padding:16px 26px;font-size:20px;color:#9198a1;border-bottom:1px solid #262c36}.crumb .lk{color:#4493f8}.crumb b{color:#e6edf3}
+.md{padding:22px 30px;font-size:20px;line-height:1.5}
+.md .fm{width:100%;border-collapse:collapse;margin-bottom:18px;font-size:17px}
+.md table{width:100%;border-collapse:collapse;margin:12px 0;font-size:17px}
+.md th,.md td{border:1px solid #3d444d;padding:7px 12px;text-align:left;vertical-align:top}
+.md th{font-weight:600;background:#151b23}
+.md .fm th{width:150px;text-align:center}
+.md h1{font-size:34px;font-weight:600;padding-bottom:8px;border-bottom:1px solid #3d444d;margin:14px 0 12px}
+.md h2{font-size:27px;font-weight:600;padding-bottom:6px;border-bottom:1px solid #3d444d;margin:18px 0 10px}
+.md h3{font-size:22px;margin:12px 0 6px}
+.md p{margin:8px 0}.md ul,.md ol{padding-left:30px;margin:8px 0}.md li{margin:3px 0}
+.md code{background:#2f353d;border-radius:6px;padding:1px 6px;font-size:16px;font-family:'JetBrains Mono',monospace}
+.md pre{background:#151b23;border-radius:8px;padding:14px;font-size:16px;font-family:'JetBrains Mono',monospace;white-space:pre-wrap}
+.md blockquote{border-left:4px solid #3d444d;padding-left:14px;color:#9198a1;margin:10px 0}
+.lock{filter:blur(9px) brightness(.55);transform:scale(1.05)}
+.lk2{position:absolute;inset:46px 0 0 0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:22px}
+.lk2 p{font-size:36px;line-height:1.3;color:#fff}.lk2 b{color:#f2541b}
+</style></head><body>
+<section class="slide cover"><img class="bg" src="cover_pixel.png"><div class="wm">@jheitrujillob</div>
+<div class="cc"><p class="hw g" style="font-size:66px">Selección de</p><p class="ct">10 skills<br>de Claude</p><p class="hw g" style="font-size:66px">para tu negocio · Parte 1</p></div></section>
+<section class="slide sk"><div class="wm">@jheitrujillob</div><div class="num">01/10</div>
+<h2>Frontend Design</h2><p class="sub">La skill oficial de Anthropic: páginas con dirección visual clara, que no se ven hechas con IA</p>
+<div class="win"><div class="bar"><i></i><i></i><i></i></div><div class="gh"><div class="crumb"><span class="lk">skills</span> / <span class="lk">skills</span> / <span class="lk">frontend-design</span> / <b>SKILL.md</b></div><div class="md"><table class="fm"><tr><th>nombre</th><td>frontend-design</td></tr><tr><th>descripción</th><td>Guía para un diseño visual distintivo e intencional al crear una interfaz nueva o rediseñar una existente. Ayuda con la dirección estética, la tipografía y decisiones que no se vean de plantilla.</td></tr><tr><th>licencia</th><td>Términos completos en LICENSE.txt</td></tr></table><h1>Frontend Design</h1><p>Aborda esto como el director de diseño de un estudio conocido por darle a cada cliente una identidad visual propia, que no se confunda con la de nadie más.</p><h2>Basa tus diseños en el tema</h2><p>Si el brief no dice cuál es el producto o el tema, identifícalo tú antes de diseñar y confírmalo con el cliente.</p><h2>Principios de diseño</h2><p>En la web, lo primero que se ve es la portada: abre con lo más característico del mundo del tema.</p><p>La tipografía lleva la personalidad de la página: usa una familia o dos, y si son dos, que sean claramente distintas.</p></div></div></div>
+<div class="foot"><span class="hw">Link<br>directo ↘</span><span class="pill"><svg viewBox="0 0 24 24" width="30" height="30"><path d="M10 14a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1 1M14 10a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1-1" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg>anthropics/skills › frontend-design</span></div><div class="sw">DESLIZA ⟳</div></section>
+<section class="slide sk"><div class="wm">@jheitrujillob</div><div class="num">02/10</div>
+<h2>Canvas Design</h2><p class="sub">Pósters y piezas gráficas en PNG o PDF, a partir de una idea de diseño</p>
+<div class="win"><div class="bar"><i></i><i></i><i></i></div><div class="gh"><div class="crumb"><span class="lk">skills</span> / <span class="lk">skills</span> / <span class="lk">canvas-design</span> / <b>SKILL.md</b></div><div class="md"><table class="fm"><tr><th>nombre</th><td>canvas-design</td></tr><tr><th>descripción</th><td>Crea arte visual en .png y .pdf usando una filosofía de diseño. Úsala cuando pidas un póster, una pieza de arte, un diseño u otra pieza estática.</td></tr><tr><th>licencia</th><td>Términos completos en LICENSE.txt</td></tr></table><p>Estas son instrucciones para crear filosofías de diseño: movimientos estéticos que luego se EXPRESAN VISUALMENTE. Solo entrega archivos .md, .pdf y .png.</p><p>Hazlo en dos pasos:</p><ol><li>Crear la filosofía de diseño (archivo .md)</li><li>Expresarla en un lienzo (archivo .pdf o .png)</li></ol><h2>CREACIÓN DE LA FILOSOFÍA DE DISEÑO</h2><p>Para empezar, crea una FILOSOFÍA VISUAL (no diseños ni plantillas) que se interpretará a través de:</p><ul><li>Forma, espacio, color, composición</li><li>Imágenes, gráficos, figuras, patrones</li></ul></div></div></div>
+<div class="foot"><span class="hw">Link<br>directo ↘</span><span class="pill"><svg viewBox="0 0 24 24" width="30" height="30"><path d="M10 14a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1 1M14 10a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1-1" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg>anthropics/skills › canvas-design</span></div><div class="sw">DESLIZA ⟳</div></section>
+<section class="slide sk"><div class="wm">@jheitrujillob</div><div class="num">03/10</div>
+<h2>PPTX</h2><p class="sub">Crea y edita presentaciones y pitch decks en PowerPoint</p>
+<div class="win"><div class="bar"><i></i><i></i><i></i></div><div class="gh"><div class="crumb"><span class="lk">skills</span> / <span class="lk">skills</span> / <span class="lk">pptx</span> / <b>SKILL.md</b></div><div class="md"><table class="fm"><tr><th>nombre</th><td>pptx</td></tr><tr><th>descripción</th><td>Úsala siempre que haya un archivo .pptx de por medio: crear presentaciones o pitch decks, leer su contenido, editarlas, combinarlas o trabajar con plantillas.</td></tr><tr><th>licencia</th><td>Propietaria. Términos completos en LICENSE.txt</td></tr></table><h1>PPTX: crear, editar y analizar</h1><p>Un <code>.pptx</code> es un archivo ZIP de XML. Elige el método según la tarea:</p><table><tr><th>Tarea</th><th>Método</th></tr><tr><td><b>Crear</b> una presentación</td><td>Escribe un script con <code>pptxgenjs</code></td></tr><tr><td><b>Editar</b> una existente o partir de plantilla</td><td>descomprimir → editar la diapositiva → comprimir</td></tr><tr><td><b>Leer</b> el contenido</td><td><code>markitdown deck.pptx</code></td></tr></table><h2>Scripts</h2><p>Las rutas son relativas a la carpeta de la skill.</p></div></div></div>
+<div class="foot"><span class="hw">Link<br>directo ↘</span><span class="pill"><svg viewBox="0 0 24 24" width="30" height="30"><path d="M10 14a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1 1M14 10a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1-1" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg>anthropics/skills › pptx</span></div><div class="sw">DESLIZA ⟳</div></section>
+<section class="slide sk"><div class="wm">@jheitrujillob</div><div class="num">04/10</div>
+<h2>XLSX</h2><p class="sub">Hojas de cálculo con fórmulas y gráficos, o limpia las que ya tienes</p>
+<div class="win"><div class="bar"><i></i><i></i><i></i></div><div class="gh"><div class="crumb"><span class="lk">skills</span> / <span class="lk">skills</span> / <span class="lk">xlsx</span> / <b>SKILL.md</b></div><div class="md"><table class="fm"><tr><th>nombre</th><td>xlsx</td></tr><tr><th>descripción</th><td>Úsala cuando una hoja de cálculo sea la entrada o la salida principal: abrir, leer, editar o arreglar un .xlsx o .csv, agregar columnas, calcular fórmulas, dar formato o crear gráficos.</td></tr><tr><th>licencia</th><td>Propietaria. Términos completos en LICENSE.txt</td></tr></table><h1>XLSX: crear, editar y analizar</h1><table><tr><th>Tarea</th><th>Método</th></tr><tr><td><b>Crear</b> o <b>editar</b> con fórmulas y formato</td><td><code>openpyxl</code></td></tr><tr><td><b>Datos en bloque</b> de entrada o salida</td><td><code>pandas</code></td></tr><tr><td><b>Vistazo rápido</b> a una hoja</td><td><code>markitdown file.xlsx</code></td></tr><tr><td><b>Leer</b> un modelo (fórmulas <i>y</i> valores)</td><td>dos pasadas de <code>load_workbook</code></td></tr></table><blockquote><code>openpyxl</code>, <code>pandas</code> y <code>markitdown</code> ya vienen instalados.</blockquote></div></div></div>
+<div class="foot"><span class="hw">Link<br>directo ↘</span><span class="pill"><svg viewBox="0 0 24 24" width="30" height="30"><path d="M10 14a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1 1M14 10a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1-1" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg>anthropics/skills › xlsx</span></div><div class="sw">DESLIZA ⟳</div></section>
+<section class="slide sk"><div class="wm">@jheitrujillob</div><div class="num">05/10</div>
+<h2>DOCX</h2><p class="sub">Propuestas, contratos y documentos en Word con formato profesional</p>
+<div class="win"><div class="bar"><i></i><i></i><i></i></div><div class="gh"><div class="crumb"><span class="lk">skills</span> / <span class="lk">skills</span> / <span class="lk">docx</span> / <b>SKILL.md</b></div><div class="md"><table class="fm"><tr><th>nombre</th><td>docx</td></tr><tr><th>descripción</th><td>Úsala cuando quieras crear, leer, editar o manejar documentos de Word (.docx): informes, cartas, plantillas, tablas de contenido, encabezados y numeración de páginas.</td></tr><tr><th>licencia</th><td>Propietaria. Términos completos en LICENSE.txt</td></tr></table><h1>DOCX: crear, editar y analizar</h1><p>Un <code>.docx</code> es un archivo ZIP de XML. Elige el método según la tarea:</p><table><tr><th>Tarea</th><th>Método</th></tr><tr><td><b>Crear</b> un documento</td><td>Escribe un script con <code>docx</code> (npm)</td></tr><tr><td><b>Editar</b> uno existente</td><td>descomprimir → editar <code>word/document.xml</code> → comprimir</td></tr><tr><td><b>Leer</b> el contenido</td><td><code>pandoc -t markdown file.docx</code></td></tr></table><h2>Crear con docx-js: detalles a tener en cuenta</h2></div></div></div>
+<div class="foot"><span class="hw">Link<br>directo ↘</span><span class="pill"><svg viewBox="0 0 24 24" width="30" height="30"><path d="M10 14a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1 1M14 10a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1-1" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg>anthropics/skills › docx</span></div><div class="sw">DESLIZA ⟳</div></section>
+<section class="slide sk"><div class="wm">@jheitrujillob</div><div class="num">06/10</div>
+<h2>PDF</h2><p class="sub">Lee, une, separa y llena PDFs, y saca tablas y texto de ellos</p>
+<div class="win"><div class="bar"><i></i><i></i><i></i></div><div class="gh"><div class="crumb"><span class="lk">skills</span> / <span class="lk">skills</span> / <span class="lk">pdf</span> / <b>SKILL.md</b></div><div class="md"><table class="fm"><tr><th>nombre</th><td>pdf</td></tr><tr><th>descripción</th><td>Úsala para todo lo que tenga que ver con PDFs: leer o extraer texto y tablas, unir o separar archivos, rotar páginas, poner marcas de agua, llenar formularios o aplicar OCR a documentos escaneados.</td></tr><tr><th>licencia</th><td>Propietaria. Términos completos en LICENSE.txt</td></tr></table><h1>Guía para procesar PDFs</h1><h2>Resumen</h2><p>Esta guía cubre las operaciones esenciales con PDFs usando librerías de Python y herramientas de línea de comandos. Si necesitas llenar un formulario PDF, lee FORMS.md.</p><h2>Inicio rápido</h2><pre>from pypdf import PdfReader, PdfWriter
+
+# Leer un PDF
+reader = PdfReader("documento.pdf")
+print(f"Páginas: {len(reader.pages)}")</pre></div></div></div>
+<div class="foot"><span class="hw">Link<br>directo ↘</span><span class="pill"><svg viewBox="0 0 24 24" width="30" height="30"><path d="M10 14a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1 1M14 10a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1-1" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg>anthropics/skills › pdf</span></div><div class="sw">DESLIZA ⟳</div></section>
+<section class="slide sk"><div class="wm">@jheitrujillob</div><div class="num">07/10</div>
+<h2>Theme Factory</h2><p class="sub">10 temas de colores y fuentes listos para tus slides, documentos y páginas</p>
+<div class="win"><div class="bar"><i></i><i></i><i></i></div><div class="gh"><div class="crumb"><span class="lk">skills</span> / <span class="lk">skills</span> / <span class="lk">theme-factory</span> / <b>SKILL.md</b></div><div class="md"><table class="fm"><tr><th>nombre</th><td>theme-factory</td></tr><tr><th>descripción</th><td>Herramientas para darle estilo a cualquier pieza con un tema: presentaciones, documentos, informes o landing pages. Trae 10 temas predefinidos de colores y fuentes, o crea uno nuevo al momento.</td></tr><tr><th>licencia</th><td>Términos completos en LICENSE.txt</td></tr></table><h1>Theme Factory</h1><p>Esta skill ofrece una colección curada de temas profesionales de fuentes y colores, cada uno con paletas y combinaciones tipográficas elegidas con cuidado. Una vez eliges un tema, se puede aplicar a cualquier pieza.</p><h2>Propósito</h2><p>Para dar un estilo coherente y profesional a tus presentaciones. Cada tema incluye:</p><ul><li>Una paleta de colores coherente con códigos hex</li><li>Fuentes que combinan para títulos y texto</li><li>Una identidad visual para distintos contextos y audiencias</li></ul></div></div></div>
+<div class="foot"><span class="hw">Link<br>directo ↘</span><span class="pill"><svg viewBox="0 0 24 24" width="30" height="30"><path d="M10 14a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1 1M14 10a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1-1" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg>anthropics/skills › theme-factory</span></div><div class="sw">DESLIZA ⟳</div></section>
+<section class="slide sk"><div class="wm">@jheitrujillob</div><div class="num">08/10</div>
+<h2>Brand Guidelines</h2><p class="sub">Aplica colores y tipografías de marca. Trae la de Anthropic: úsala de molde para la tuya</p>
+<div class="win"><div class="bar"><i></i><i></i><i></i></div><div class="gh"><div class="crumb"><span class="lk">skills</span> / <span class="lk">skills</span> / <span class="lk">brand-guidelines</span> / <b>SKILL.md</b></div><div class="md"><table class="fm"><tr><th>nombre</th><td>brand-guidelines</td></tr><tr><th>descripción</th><td>Aplica los colores y la tipografía oficiales de la marca Anthropic a cualquier pieza. Úsala cuando necesites colores de marca, guías de estilo o estándares de diseño de una empresa.</td></tr><tr><th>licencia</th><td>Términos completos en LICENSE.txt</td></tr></table><h1>Estilo de marca de Anthropic</h1><h2>Resumen</h2><p>Usa esta skill para acceder a la identidad de marca y los recursos de estilo oficiales de Anthropic.</p><p><b>Palabras clave</b>: branding, identidad corporativa, identidad visual, colores de marca, tipografía, diseño visual</p><h2>Guía de marca</h2><h3>Colores</h3><p><b>Colores principales:</b></p><ul><li>Oscuro: <code>#141413</code>, texto principal y fondos oscuros</li><li>Claro: <code>#faf9f5</code>, fondos claros y texto sobre oscuro</li></ul></div></div></div>
+<div class="foot"><span class="hw">Link<br>directo ↘</span><span class="pill"><svg viewBox="0 0 24 24" width="30" height="30"><path d="M10 14a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1 1M14 10a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1-1" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg>anthropics/skills › brand-guidelines</span></div><div class="sw">DESLIZA ⟳</div></section>
+<section class="slide sk"><div class="wm">@jheitrujillob</div><div class="num">09/10</div>
+<h2>Skill Creator</h2><p class="sub">Crea tus propias skills, pruébalas y mejóralas</p>
+<div class="win"><div class="bar"><i></i><i></i><i></i></div><div class="gh"><div class="crumb"><span class="lk">skills</span> / <span class="lk">skills</span> / <span class="lk">skill-creator</span> / <b>SKILL.md</b></div><div class="md"><table class="fm"><tr><th>nombre</th><td>skill-creator</td></tr><tr><th>descripción</th><td>Crea skills nuevas, modifica y mejora las que ya tienes y mide su rendimiento con pruebas.</td></tr><tr><th>licencia</th><td>Términos completos en LICENSE.txt</td></tr></table><h1>Skill Creator</h1><p>Una skill para crear skills nuevas e irlas mejorando.</p><p>A grandes rasgos, el proceso para crear una skill es así:</p><ul><li>Decide qué quieres que haga la skill y más o menos cómo</li><li>Escribe un borrador de la skill</li><li>Crea unos prompts de prueba y ejecuta Claude con la skill sobre ellos</li><li>Ayuda al usuario a evaluar los resultados, de forma cualitativa y cuantitativa</li><li>Reescribe la skill según lo que salga de esa evaluación</li></ul></div></div></div>
+<div class="foot"><span class="hw">Link<br>directo ↘</span><span class="pill"><svg viewBox="0 0 24 24" width="30" height="30"><path d="M10 14a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1 1M14 10a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1-1" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg>anthropics/skills › skill-creator</span></div><div class="sw">DESLIZA ⟳</div></section>
+<section class="slide sk"><div class="wm">@jheitrujillob</div><div class="num">10/10</div>
+<h2>Clonar Carrusel</h2><p class="sub">La mía: modela un carrusel viral con tu tema, tu voz y tu oferta. Exclusiva de mi taller</p>
+<div class="win"><div class="bar"><i></i><i></i><i></i></div><div class="shot lock" style="background-image:url(shots/md_clonar-carrusel.jpg)"></div><div class="lk2"><svg viewBox="0 0 24 24" width="86" height="86"><rect x="4" y="10" width="16" height="11" rx="2.5" fill="#f2541b"/><path d="M8 10V7a4 4 0 0 1 8 0v3" fill="none" stroke="#f2541b" stroke-width="2.4"/></svg><p>Solo para alumnos del<br><b>Taller de contenido que vende con IA</b></p></div></div>
+<div class="foot"><span class="hw">Link en<br>mi perfil ↘</span><span class="pill" style="background:#f2541b;border-color:#f2541b">Solo en mi Taller</span></div><div class="sw">DESLIZA ⟳</div></section>
+<section class="slide promo"><div class="wm">@jheitrujillob</div><div class="pc">
+<p class="pk">¿No sabes por dónde empezar?</p>
+<p class="pt">Taller de contenido que vende con IA</p>
+<p class="pd">Te enseño a usar Claude para crear el contenido de tu negocio: estrategia, guiones, carruseles y más.</p>
+<p class="hw" style="font-size:64px;margin-top:40px">Link en <span class="bio">MI PERFIL</span></p></div></section>
+<section class="slide cta"><div class="wm">@jheitrujillob</div><div class="ccx">
+<p class="q">¿Quieres los links?</p>
+<p class="hw" style="font-size:72px;margin-top:70px">Comenta ↘</p>
+<p class="kw">SKILLS</p>
+<p class="hw" style="font-size:64px;line-height:1.15">y te los envío<br>por mensaje directo</p></div>
+<div class="sfoot"><span>SÍGUEME PARA LA PARTE 2</span><span>DESLIZA ⟳</span></div></section>
+<section class="slide quote"><div class="wm">@jheitrujillob</div><p class="qt">El diseño no es solo cómo se ve. El diseño es cómo funciona.</p><p class="qa hw">Steve Jobs</p>
+<div class="sfoot" style="color:#5a3c3a"><span>SÍGUEME PARA MÁS</span><span>GUARDA ESTE POST ▮</span></div></section></body></html>

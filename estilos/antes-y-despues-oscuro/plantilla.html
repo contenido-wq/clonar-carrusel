@@ -1,0 +1,178 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Carrusel flyer premium</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#ffffff;--ink:#0d0d0d;--muted:#6b6b6b;--sage:#a9b39f;--chip:#1c1c1c;--accent:#ff5a1f;
+  --f:'Inter',sans-serif;--serif:'Instrument Serif',serif;--mono:'JetBrains Mono',monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#777;display:flex;flex-direction:column;gap:40px;align-items:center;padding:40px 0}
+.slide{position:relative;width:1080px;height:1350px;overflow:hidden;background:var(--bg);color:var(--ink);font-family:var(--f)}
+.handle{position:absolute;z-index:5;left:0;right:0;bottom:36px;text-align:center;font-weight:600;font-size:28px;color:var(--muted)}
+.num{position:absolute;z-index:5;right:56px;top:46px;font-weight:600;font-size:26px;color:var(--muted)}
+/* portada */
+.s1{background:#111}
+.s1 .bgposters{position:absolute;inset:0;display:flex;gap:18px;padding:40px;transform:rotate(-8deg) scale(1.25);opacity:.32;filter:blur(1.5px)}
+.s1 .bgposters img{width:240px;height:360px;object-fit:cover;border-radius:14px}
+.s1 .fade{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(17,17,17,.15) 0%,rgba(17,17,17,.55) 40%,#111 78%)}
+.s1 .kick{position:absolute;z-index:3;left:70px;top:90px;background:var(--accent);color:#fff;font-weight:800;font-size:30px;letter-spacing:2px;padding:10px 22px;border-radius:10px}
+.s1 h1{position:absolute;z-index:3;left:70px;right:40px;top:170px;color:#fff;font-weight:900;font-size:118px;line-height:.98;letter-spacing:-3px}
+.s1 h1 em{font-family:var(--serif);font-weight:400;font-style:italic;letter-spacing:-1px;color:#ffd7c4}
+.s1 .yo{position:absolute;z-index:2;right:-60px;bottom:0;width:640px}
+.s1 .mini{position:absolute;z-index:3;left:70px;bottom:150px;display:flex;align-items:flex-end;gap:16px}
+.s1 .mini figure{display:flex;flex-direction:column;gap:10px;align-items:center}
+.s1 .mini img{border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.5);object-fit:cover}
+.s1 .mini figcaption{color:#fff;font-weight:700;font-size:24px}
+.s1 .arrow{color:#fff;font-size:60px;font-weight:800;margin-bottom:120px}
+.s1 .handle{color:#bdbdbd;text-align:left;left:70px}
+.s1 .swipe{position:absolute;z-index:3;left:70px;bottom:92px;color:#fff;font-weight:700;font-size:30px;opacity:.85}
+/* antes / después */
+.ba .lab{font-weight:800;font-size:56px;letter-spacing:-1px;display:flex;align-items:center;gap:14px}
+.ba .antes{position:absolute;left:70px;top:360px}
+.ba .antes img{display:block;width:330px;height:495px;object-fit:cover;border-radius:18px;margin-top:20px;box-shadow:0 20px 40px rgba(0,0,0,.18)}
+.ba .despues{position:absolute;left:440px;top:210px}
+.ba .despues img{display:block;width:570px;height:855px;object-fit:cover;border-radius:22px;margin-top:22px;box-shadow:0 30px 60px rgba(0,0,0,.25)}
+.ba .spark{width:58px;height:58px}
+.ba .neg{position:absolute;left:70px;right:70px;top:1150px;font-size:36px;line-height:1.3;font-weight:600}
+.ba .neg b{color:var(--accent)}
+/* pasos */
+.steps{background:var(--sage)}
+.steps h2{position:absolute;left:0;right:0;top:80px;text-align:center;font-weight:900;font-size:76px;letter-spacing:-2px;color:#111}
+.steps .row{position:absolute;left:32px;right:32px;top:210px;display:flex;justify-content:space-between}
+.step{width:316px;display:flex;flex-direction:column;align-items:center;gap:26px}
+.phone{width:316px;height:720px;background:#fff;border-radius:44px;border:9px solid #e9e9e9;box-shadow:0 18px 40px rgba(0,0,0,.18);position:relative;overflow:hidden;font-family:var(--f)}
+.phone .notch{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:100px;height:28px;background:#111;border-radius:16px}
+.phone .top{position:absolute;top:52px;left:18px;right:18px;display:flex;justify-content:space-between;color:#999;font-size:20px}
+.phone .card{position:absolute;left:14px;right:14px;bottom:72px;background:#f4f4f6;border-radius:22px;padding:12px}
+.phone .card img{width:86px;height:118px;object-fit:cover;border-radius:10px;display:block}
+.phone .card p{font-size:14px;line-height:1.35;color:#333;margin-top:8px}
+.phone .card p b{display:block;font-size:13px;margin-bottom:3px}
+.phone .input{position:absolute;left:14px;right:14px;bottom:18px;height:44px;border-radius:22px;background:#f4f4f6;display:flex;align-items:center;padding:0 14px;color:#999;font-size:15px;gap:10px}
+.phone .input .plus{font-size:24px;color:#555}.phone .input .send{margin-left:auto;width:30px;height:30px;border-radius:50%;background:#2563eb}
+.phone .menu{position:absolute;left:24px;bottom:72px;width:200px;background:#fff;border-radius:18px;box-shadow:0 8px 30px rgba(0,0,0,.18);padding:10px 0;font-size:16px}
+.phone .menu div{padding:10px 18px;color:#333}.phone .menu .on{background:#eef2ff;color:#2563eb;font-weight:700}
+.phone .think{position:absolute;left:16px;top:96px;background:#e0e7ff;color:#2563eb;font-weight:700;font-size:15px;padding:6px 14px;border-radius:14px}
+.phone .result{position:absolute;left:16px;right:16px;top:96px}
+.phone .result img{width:100%;height:400px;object-fit:cover;border-radius:14px}
+.phone .result p{font-size:13px;line-height:1.35;color:#333;margin-top:10px}
+.phone .home{position:absolute;inset:100px 20px auto;text-align:center;color:#111;font-weight:800;font-size:28px}
+.phone .home small{display:block;font-weight:500;font-size:16px;color:#888;margin-top:10px}
+.chip{background:var(--chip);color:#fff;font-family:var(--mono);font-weight:700;font-size:24px;letter-spacing:1px;padding:10px 18px;border-radius:8px;text-align:center}
+.steps .tip{position:absolute;left:70px;right:70px;top:1110px;text-align:center;font-size:38px;font-weight:700;line-height:1.25;color:#111}
+.steps .tip span{background:#fff;padding:2px 12px;border-radius:8px}
+.steps .handle{color:#2f3a28}
+/* CTA */
+.cta{background:#111;color:#fff}
+.cta .yo{position:absolute;right:-40px;bottom:0;width:560px;z-index:1}
+.cta .txt{position:absolute;z-index:2;left:70px;top:150px;width:640px}
+.cta .q{font-size:56px;font-weight:800;line-height:1.08;letter-spacing:-1.5px}
+.cta .com{margin-top:70px;font-size:44px;font-weight:600;opacity:.9}
+.cta .kw{font-family:var(--serif);font-style:italic;font-size:220px;line-height:1;color:#ffd7c4;margin:4px 0 0 -6px}
+.cta .give{margin-top:40px;font-size:40px;line-height:1.28;font-weight:600}
+.cta .give b{color:var(--accent)}
+.cta .handle{color:#9a9a9a;text-align:left;left:70px}
+</style></head><body>
+
+<!-- 1. PORTADA -->
+<section class="slide s1">
+  <div class="bgposters"><img src="ia/cafe_antes.jpg"><img src="ia/barber_antes.jpg"><img src="ia/arepa_antes.jpg"><img src="ia/pan_antes.jpg"><img src="ia/cafe_antes.jpg"></div>
+  <div class="fade"></div>
+  <div class="kick">CON CHATGPT</div>
+  <h1>Tu flyer grita<br>"hecho con IA".<br><em>Así lo vuelves premium.</em></h1>
+  <img class="yo" src="foto/jhei_recorte.png" alt="">
+  <div class="mini">
+    <figure><img src="ia/arepa_antes.jpg" style="width:190px;height:285px"><figcaption>Antes</figcaption></figure>
+    <div class="arrow">→</div>
+    <figure><img src="ia/arepa_despues.jpg" style="width:250px;height:375px"><figcaption>Después</figcaption></figure>
+  </div>
+  <div class="swipe">Desliza →</div>
+  <div class="handle">@jheitrujillob</div>
+</section>
+
+<!-- 2-5. ANTES / DESPUÉS -->
+<section class="slide ba">
+  <div class="num">2/8</div>
+  <div class="antes"><div class="lab">Antes</div><img src="ia/cafe_antes.jpg"></div>
+  <div class="despues"><div class="lab"><svg class="spark" viewBox="0 0 40 40"><path d="M20 2 Q22 18 38 20 Q22 22 20 38 Q18 22 2 20 Q18 18 20 2Z" fill="#0d0d0d"/></svg>Después</div><img src="ia/cafe_despues.jpg"></div>
+  <p class="neg">Mismo café. <b>Un prompt.</b> Cero diseñador.</p>
+  <div class="handle">@jheitrujillob</div>
+</section>
+<section class="slide ba">
+  <div class="num">3/8</div>
+  <div class="antes"><div class="lab">Antes</div><img src="ia/barber_antes.jpg"></div>
+  <div class="despues"><div class="lab"><svg class="spark" viewBox="0 0 40 40"><path d="M20 2 Q22 18 38 20 Q22 22 20 38 Q18 22 2 20 Q18 18 20 2Z" fill="#0d0d0d"/></svg>Después</div><img src="ia/barber_despues.jpg"></div>
+  <p class="neg">Menos fuego y neón. <b>Más marca.</b></p>
+  <div class="handle">@jheitrujillob</div>
+</section>
+<section class="slide ba">
+  <div class="num">4/8</div>
+  <div class="antes"><div class="lab">Antes</div><img src="ia/arepa_antes.jpg"></div>
+  <div class="despues"><div class="lab"><svg class="spark" viewBox="0 0 40 40"><path d="M20 2 Q22 18 38 20 Q22 22 20 38 Q18 22 2 20 Q18 18 20 2Z" fill="#0d0d0d"/></svg>Después</div><img src="ia/arepa_despues.jpg"></div>
+  <p class="neg">El producto vende. <b>El ruido no.</b></p>
+  <div class="handle">@jheitrujillob</div>
+</section>
+<section class="slide ba">
+  <div class="num">5/8</div>
+  <div class="antes"><div class="lab">Antes</div><img src="ia/pan_antes.jpg"></div>
+  <div class="despues"><div class="lab"><svg class="spark" viewBox="0 0 40 40"><path d="M20 2 Q22 18 38 20 Q22 22 20 38 Q18 22 2 20 Q18 18 20 2Z" fill="#0d0d0d"/></svg>Después</div><img src="ia/pan_despues.jpg"></div>
+  <p class="neg">Tu cliente confía más en lo que <b>se ve caro.</b></p>
+  <div class="handle">@jheitrujillob</div>
+</section>
+
+<!-- 6. PASOS 1-3 -->
+<section class="slide steps">
+  <div class="num" style="color:#2f3a28">6/8</div>
+  <h2>Cómo hacerlo (1/2)</h2>
+  <div class="row">
+    <div class="step"><div class="phone"><i class="notch"></i><div class="top"><span>≡</span><span>ChatGPT</span><span>✎</span></div>
+      <div class="home">¿Qué tienes en mente hoy?<small>Abre una conversación nueva</small></div>
+      <div class="input"><span class="plus">+</span>Pregunta lo que quieras<i class="send"></i></div></div>
+      <div class="chip">1. ABRE CHATGPT</div></div>
+    <div class="step"><div class="phone"><i class="notch"></i><div class="top"><span>≡</span><span>ChatGPT</span><span>✎</span></div>
+      <div class="card"><img src="ia/arepa_antes.jpg"></div>
+      <div class="input"><span class="plus">+</span>Pregunta lo que quieras<i class="send"></i></div></div>
+      <div class="chip">2. SUBE TU FLYER</div></div>
+    <div class="step"><div class="phone"><i class="notch"></i><div class="top"><span>≡</span><span>ChatGPT</span><span>✎</span></div>
+      <div class="card"><img src="ia/arepa_antes.jpg"><p><b>ROL Y EXPERIENCIA</b>Actúa como director de arte publicitario, fotógrafo de producto y diseñador gráfico especializado en campañas premium…</p></div>
+      <div class="input"><span class="plus">+</span>Pregunta lo que quieras<i class="send"></i></div></div>
+      <div class="chip">3. PEGA EL PROMPT</div></div>
+  </div>
+  <p class="tip">El prompt es la clave: le dice qué <span>conservar</span>, qué <span>quitar</span> y cómo hacerlo <span>premium</span>.</p>
+  <div class="handle">@jheitrujillob</div>
+</section>
+
+<!-- 7. PASOS 4-6 -->
+<section class="slide steps">
+  <div class="num" style="color:#2f3a28">7/8</div>
+  <h2>Cómo hacerlo (2/2)</h2>
+  <div class="row">
+    <div class="step"><div class="phone"><i class="notch"></i><div class="top"><span>≡</span><span>ChatGPT</span><span>✎</span></div>
+      <div class="card" style="opacity:.35"><img src="ia/arepa_antes.jpg"></div>
+      <div class="menu"><div>Cámara</div><div>Fotos</div><div>Archivos</div><div class="on">Pensar</div></div>
+      <div class="input"><span class="plus">+</span>Pregunta lo que quieras<i class="send"></i></div></div>
+      <div class="chip">4. + Y "PENSAR"</div></div>
+    <div class="step"><div class="phone"><i class="notch"></i><div class="top"><span>≡</span><span>ChatGPT</span><span>✎</span></div>
+      <div class="think">Pensar ✕</div>
+      <div class="card"><img src="ia/arepa_antes.jpg"><p><b>ROL Y EXPERIENCIA</b>Actúa como director de arte publicitario, fotógrafo de producto…</p></div>
+      <div class="input"><span class="plus">+</span>Pregunta lo que quieras<i class="send"></i></div></div>
+      <div class="chip">5. ENVÍA</div></div>
+    <div class="step"><div class="phone"><i class="notch"></i><div class="top"><span>≡</span><span>ChatGPT</span><span>✎</span></div>
+      <div class="result"><img src="ia/arepa_despues.jpg"><p>Tu flyer rediseñado está listo: menos texto, foto protagonista y paleta terracota.</p></div>
+      <div class="input"><span class="plus">+</span>Pregunta lo que quieras<i class="send"></i></div></div>
+      <div class="chip">6. EL RESULTADO</div></div>
+  </div>
+  <p class="tip">¿Aún recargado? Respóndele: <span>"Menos texto, más espacio".</span></p>
+  <div class="handle">@jheitrujillob</div>
+</section>
+
+<!-- 8. CTA -->
+<section class="slide cta">
+  <img class="yo" src="foto/jhei_recorte.png" alt="">
+  <div class="txt">
+    <p class="q">¿Quieres el prompt completo para tu negocio?</p>
+    <p class="com">Comenta</p>
+    <p class="kw">GUÍA</p>
+    <p class="give">y te envío la guía con el <b>prompt exacto</b> para que tu flyer se vea premium.</p>
+  </div>
+  <div class="handle">@jheitrujillob</div>
+</section>
+</body></html>
