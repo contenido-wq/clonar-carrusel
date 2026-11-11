@@ -4,17 +4,30 @@ Skill para Claude que convierte un carrusel viral de Instagram en **tu** carruse
 
 Creada por **Jhei Trujillo** ([@jheitrujillob](https://instagram.com/jheitrujillob)), estratega digital y creador de AIVI.
 
-## Empieza en 3 pasos (Claude.ai, sin programar)
+## Instálala con el link (sin descargar nada)
 
-1. **Descarga** [`clonar-carrusel.zip`](https://github.com/contenido-wq/clonar-carrusel/raw/main/dist/clonar-carrusel.zip). No lo descomprimas.
-2. En [claude.ai](https://claude.ai) ve a **Configuración → Capacidades**, activa **ejecución de código y creación de archivos** y, en **Skills**, sube el ZIP.
-3. Abre un chat nuevo y escribe:
+**Claude.ai** (Pro, Max, Team o Enterprise): **Personalizar → Plugins → Agregar → Agregar marketplace → Desde un repositorio**, pega
+
+```
+contenido-wq/clonar-carrusel
+```
+
+e instala **clonar-carrusel**. Activa también *ejecución de código y creación de archivos* en Configuración → Capacidades.
+
+**Claude Code:**
+
+```
+/plugin marketplace add contenido-wq/clonar-carrusel
+/plugin install clonar-carrusel@jheitrujillob
+```
+
+Después abre un chat nuevo y escribe:
 
 > ¿Qué estilos de carrusel tienes?
 
 Claude te manda el catálogo, eliges uno y te pide solo tu tema, tu @ y tu llamada a la acción.
 
-¿Claude Code, problemas o capturas de pantalla? 👉 **[Guía de instalación completa](INSTALACION.md)**
+👉 **[Guía de instalación completa](INSTALACION.md)** (requisitos, Claude Code en la nube y problemas comunes)
 
 ## Los 11 estilos incluidos
 
@@ -55,7 +68,7 @@ Si tu entorno no puede entrar a Instagram, la skill te pide capturas de pantalla
 2. Al terminar, di: **"Guárdalo como estilo"**. Queda con nombre, plantilla, muestras y ADN, y aparece en el catálogo junto a los 11 incluidos.
 3. Desde ahí: *"Hazme otro sobre X con mi estilo de …"*.
 
-**En Claude.ai** cada chat empieza desde cero, así que pide además: **"Empaqueta la skill con mis estilos"**. Claude te devuelve un `clonar-carrusel.zip` nuevo: borra la versión anterior en *Configuración → Skills* y sube ese. Tus estilos quedan disponibles en todos tus chats, y puedes pasarle ese ZIP a tu equipo.
+**En Claude.ai** cada chat empieza desde cero. Para tener tus estilos siempre, haz **Fork** de este repositorio, pídele a Claude *"Prepara mi estilo para subirlo a GitHub"*, sube esa carpeta a `skills/clonar-carrusel/estilos/` de tu fork e instala el plugin desde tu fork. Los pasos están en la [guía](INSTALACION.md#agregar-tus-propios-estilos).
 
 **En Claude Code** tus estilos se guardan en la carpeta `carruseles/estilos/` y no hay que hacer nada más.
 
@@ -66,23 +79,24 @@ Si tu entorno no puede entrar a Instagram, la skill te pide capturas de pantalla
 3. **Saca su ADN**: fórmula del gancho, rol de cada slide, paleta, tipografías y por qué funciona.
 4. **Reescribe el copy** en modo *espejo* o *inspirado*. Nunca traduce frase por frase a otro creador ni inventa cifras: lo que falta queda como `[DATO A CONFIRMAR]`.
 5. **Diseña y renderiza** los slides en PNG de 1080x1350, con tu @ y tu foto.
-6. **Revisa la calidad** contra el original y te entrega el ZIP, el caption y 2 ganchos alternativos.
+6. **Revisa la calidad** contra el original y te entrega los slides por separado, el caption y 2 ganchos alternativos.
 
 ## Estructura
 
 ```
-SKILL.md                  # instrucciones de la skill (flujo y modos)
-estilos/                  # los 11 estilos incluidos (plantilla, muestras y ADN de cada uno)
-references/
-  entrevista.md           # las 10 preguntas y cómo usar las respuestas
-  estilos.md              # estilos: elegir, replicar, guardar y empaquetar
-scripts/
-  capturar.js             # baja los slides y el caption de un post de Instagram
-  render.js               # HTML → un PNG de 1080x1350 por cada <section class="slide">
-  comparar.py             # hoja de comparación original contra nuevo
-  estilos.py              # listar, catálogo, usar, guardar, empaquetar, rendimiento
-dist/clonar-carrusel.zip  # la skill empaquetada para subir a Claude.ai
-evals/                    # casos de prueba (formato de `claude plugin eval`)
+.claude-plugin/              # marketplace.json y plugin.json (instalar con el link)
+skills/clonar-carrusel/
+  SKILL.md                   # instrucciones de la skill (flujo y modos)
+  estilos/                   # los 11 estilos incluidos (plantilla, muestras y ADN de cada uno)
+  references/
+    entrevista.md            # las 10 preguntas y cómo usar las respuestas
+    estilos.md               # estilos: elegir, replicar, guardar y conservar
+  scripts/
+    capturar.js              # baja los slides y el caption de un post de Instagram
+    render.js                # HTML → un PNG de 1080x1350 por cada <section class="slide">
+    comparar.py              # hoja de comparación original contra nuevo
+    estilos.py               # listar, catálogo, usar, guardar, exportar, rendimiento
+evals/                       # casos de prueba (formato de `claude plugin eval`)
 ```
 
 Lo que generas queda en `carruseles/` (perfil, proyectos y estilos propios), y esa carpeta está ignorada por git.

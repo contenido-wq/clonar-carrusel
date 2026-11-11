@@ -77,14 +77,16 @@ python3 -I scripts/estilos.py ranking --objetivo leads   # seguidores | autorida
 
 ## 5. Conservar los estilos propios
 
-**Claude Code (computadora o nube con repo):** lo que se guarda en `carruseles/estilos/` se queda ahí. No hay que hacer nada más.
+**Claude Code:** lo que se guarda en `carruseles/estilos/` se queda ahí. No hay que hacer nada más.
 
-**Claude.ai:** cada chat empieza con archivos nuevos, así que un estilo guardado se pierde al cerrar el chat. Para que la persona lo tenga siempre:
+**Claude.ai:** cada chat empieza con archivos nuevos, así que un estilo guardado solo dura ese chat. Para tenerlo siempre, la persona usa su propia copia del repositorio:
 
-```bash
-python3 -I scripts/estilos.py empaquetar carruseles/clonar-carrusel.zip
-```
+1. En GitHub, abre `contenido-wq/clonar-carrusel` y toca **Fork** (una sola vez).
+2. Prepara el estilo liviano y mándale los archivos **sueltos**, no en ZIP:
+   ```bash
+   python3 -I scripts/estilos.py exportar "Nombre" carruseles/exportar/<id>
+   ```
+3. Dile: "En tu fork, entra a `skills/clonar-carrusel/estilos/`, toca **Add file → Upload files**, arrastra la carpeta `<id>` completa y guarda."
+4. Si instaló el plugin desde el repo original, que agregue su fork como marketplace (Personalizar → Plugins → Agregar marketplace → `su-usuario/clonar-carrusel`) y use esa versión.
 
-Arma la skill completa con los estilos incluidos más los propios (aligerados para que el ZIP pese poco). Mándale el ZIP y dile: "En Configuración → Capacidades → Skills, elimina la versión anterior de clonar-carrusel y sube este ZIP. Desde ahí tu estilo aparece en el catálogo en cualquier chat."
-
-Para compartir un estilo con otra persona, sirve el mismo ZIP: al subirlo, tiene la skill con ese estilo.
+Desde ahí su estilo aparece en el catálogo en cualquier chat, y cualquiera que instale su fork lo tiene.

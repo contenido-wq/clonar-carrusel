@@ -4,7 +4,6 @@
 evals/results/
 *-workspace/
 *.skill
-!dist/clonar-carrusel.zip
 node_modules/
 __pycache__/
 .DS_Store

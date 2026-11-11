@@ -15,7 +15,7 @@ El flujo toma un carrusel que ya funcionó y lo convierte en uno propio: misma e
 | sube uno o varios carruseles "para guardarlos" | **Guardar estilos**: pasos 1, 2 y 4 por cada uno, y luego guardar (ver `references/estilos.md`) |
 | pide un carrusel sobre un tema, sin link, o "con el estilo X" | **Replicar**: entrevista corta (solo tema, objetivo y CTA), el estilo lo elige la persona (§2: catálogo si no dijo cuál), luego `references/estilos.md` §4 y los pasos 3 a 6 |
 | pregunta qué estilos hay | **Catálogo**: `estilos.py catalogo` y mándale la imagen |
-| quiere conservar sus estilos nuevos (sobre todo en Claude.ai) | **Empaquetar**: `references/estilos.md` §5 |
+| quiere conservar sus estilos nuevos (sobre todo en Claude.ai) | **Conservar**: `references/estilos.md` §5 |
 | pasa métricas por su cuenta (opcional) | **Rendimiento**: `references/estilos.md` §3; no las pidas |
 
 **La skill trae 11 estilos incluidos** (carpeta `estilos/` de la skill), además de los que cada persona guarde en `carruseles/estilos/`. `estilos.py listar` y `catalogo` muestran los dos. Si la persona pide un carrusel sin link, mándale el catálogo visual y pregúntale si quiere uno de esos estilos o modelar un carrusel nuevo desde un link.
@@ -36,7 +36,7 @@ Si mandan una nota de voz y no puedes transcribirla en este entorno, pídele que
 node scripts/capturar.js "<url del post>" carruseles/<codigo>/original
 ```
 
-Usa la ruta absoluta de `scripts/` dentro de esta skill. Playwright y Chromium deben estar instalados (`node -e "require('playwright')"`).
+Usa la ruta absoluta de `scripts/` dentro de esta skill: `${CLAUDE_SKILL_DIR}/scripts/`. Si esa variable no aparece reemplazada por una ruta, busca la carpeta que contiene este SKILL.md (por ejemplo con `find / -path '*clonar-carrusel/scripts/estilos.py' 2>/dev/null`). Playwright y Chromium deben estar instalados (`node -e "require('playwright')"`).
 
 Lo que ya sabemos que puede pasar:
 - **`ERR_TUNNEL_CONNECTION_FAILED`, 403, Playwright no instalado o sin terminal** (por ejemplo, en Claude.ai): no se puede capturar desde aquí. **Plan B:** pídele a la persona capturas de pantalla de cada slide, en orden, más el texto del caption si lo tiene. Guárdalas como `original/slide_01.jpg`, `slide_02.jpg`… y sigue el flujo normal. Si prefiere arreglar la red, dile que habilite `instagram.com` y `cdninstagram.com` en el acceso de red de su entorno. Nunca inventes slides que no viste.
@@ -111,12 +111,12 @@ Corrige hasta que pase. Los problemas típicos son títulos que se parten encima
 
 ## Paso 6: entrega
 
-1. Empaqueta los PNG finales en un ZIP (`zip -qj carrusel-<tema>.zip final/slide_*.png`) y envíalo junto a `comparacion.png`. Así la persona baja todo de una vez, con los slides en orden para subirlos a Instagram. Manda los PNG sueltos solo si los pide.
+1. Manda los PNG finales **por separado y en orden** (`slide_01.png`, `slide_02.png`…), listos para subirlos a Instagram, y después `comparacion.png`. No los metas en un ZIP.
 2. Pega en el chat el caption listo para copiar y 2 ganchos alternativos.
 3. Lista los `[DATO A CONFIRMAR]` y los pendientes: fotos, datos de la oferta, auto-DM activo.
 4. Cierra con una recomendación estratégica de una línea, conectada con su objetivo.
 
-Al final, ofrece en una línea guardar el carrusel como estilo en su biblioteca para reutilizarlo con otros temas. En Claude.ai, si lo guarda, entrégale también la skill empaquetada con su estilo (`references/estilos.md` §5), porque allí los archivos no duran entre chats.
+Al final, ofrece en una línea guardar el carrusel como estilo en su biblioteca para reutilizarlo con otros temas. En Claude.ai los archivos no duran entre chats: si lo guarda, explícale cómo conservarlo (`references/estilos.md` §5).
 
 Para cambios posteriores, edita el HTML o el script que lo genera, vuelve a renderizar y reenvía solo lo que cambió.
 

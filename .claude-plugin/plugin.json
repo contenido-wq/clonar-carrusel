@@ -1,0 +1,9 @@
+{
+  "name": "clonar-carrusel",
+  "version": "2.0.0",
+  "description": "Modela carruseles virales de Instagram con tu marca. Trae 11 estilos listos y te deja guardar los tuyos.",
+  "author": { "name": "Jhei Trujillo", "url": "https://instagram.com/jheitrujillob" },
+  "homepage": "https://github.com/contenido-wq/clonar-carrusel",
+  "repository": "https://github.com/contenido-wq/clonar-carrusel",
+  "license": "MIT"
+}

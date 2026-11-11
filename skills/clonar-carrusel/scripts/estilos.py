@@ -9,7 +9,7 @@ listar, catalogo, ver y usar muestran las dos. guardar siempre escribe en la pro
 Uso:
   estilos.py guardar <carpeta_proyecto> <nombre> [--html carrusel.html] [--build build.py] [--nota "..."]
   estilos.py usar <nombre> <carpeta_proyecto_nuevo>   # copia el estilo para hacer un carrusel nuevo
-  estilos.py empaquetar <salida.zip>                    # la skill + estilos incluidos + estilos propios, lista para subir
+  estilos.py exportar <nombre> <carpeta>               # copia liviana de un estilo propio, para subirla a GitHub
   estilos.py rendimiento <nombre> --alcance N [--guardados N --compartidos N --comentarios N
                          --palabra N --seguidores N --leads N --link URL --fecha AAAA-MM-DD]
   estilos.py ranking [--objetivo seguidores|autoridad|leads|venta]
@@ -80,7 +80,7 @@ def relativizar(carpeta, abs_src):
 
 
 def aligerar(carpeta):
-    """Deja el estilo liviano para empaquetarlo: solo lo que usa la plantilla, imágenes a tamaño de slide y muestras en JPG."""
+    """Deja el estilo liviano para compartirlo: solo lo que usa la plantilla, imágenes a tamaño de slide y muestras en JPG."""
     from PIL import Image
     textos = [os.path.join(carpeta, f) for f in os.listdir(carpeta) if f.endswith(TEXTO)]
     leer = lambda: "\n".join(open(t, encoding="utf-8").read() for t in textos)
@@ -312,33 +312,18 @@ def usar(a):
         print("Es un estilo de ejemplo: cambia el @, el nombre, la foto, la palabra del CTA y la oferta por los de la persona.")
 
 
-def empaquetar(a):
-    """Arma un ZIP de la skill con los estilos incluidos y los propios, para subirlo a Claude.ai y no perder los estilos nuevos."""
-    import tempfile, zipfile
-    tmp = tempfile.mkdtemp()
-    raiz = os.path.join(tmp, "clonar-carrusel")
-    os.makedirs(raiz)
-    for f in ("SKILL.md", "LICENSE"):
-        if os.path.exists(os.path.join(SKILL, f)):
-            shutil.copy(os.path.join(SKILL, f), raiz)
-    for d in ("references", "scripts"):
-        shutil.copytree(os.path.join(SKILL, d), os.path.join(raiz, d), ignore=shutil.ignore_patterns("__pycache__", "node_modules"))
-    n = {"incluido": 0, "propio": 0}
-    for e in todos(a.bib):
-        dst = os.path.join(raiz, "estilos", e["id"])
-        shutil.copytree(e["_dir"], dst, ignore=shutil.ignore_patterns("__pycache__"))
-        if e["_origen"] == "propio":
-            aligerar(dst)
-        n[e["_origen"]] += 1
-    salida = os.path.abspath(a.salida)
-    with zipfile.ZipFile(salida, "w", zipfile.ZIP_DEFLATED) as z:
-        for r, _, files in os.walk(raiz):
-            for f in sorted(files):
-                p = os.path.join(r, f)
-                z.write(p, os.path.relpath(p, tmp))
-    shutil.rmtree(tmp)
-    mb = os.path.getsize(salida) / 1e6
-    print(f"{salida}: {n['incluido']} estilos incluidos + {n['propio']} propios, {mb:.1f} MB")
+def exportar(a):
+    """Copia liviana de un estilo (solo lo que usa la plantilla, imágenes a tamaño de slide) para subirla a un fork en GitHub."""
+    d, origen = buscar(a.bib, a.nombre)
+    if os.path.exists(a.destino):
+        sys.exit(f"{a.destino} ya existe. Usa otra carpeta.")
+    shutil.copytree(d, a.destino, ignore=shutil.ignore_patterns("__pycache__"))
+    aligerar(a.destino)
+    e = json.load(open(os.path.join(a.destino, "estilo.json"), encoding="utf-8"))
+    e["proyecto_origen"] = ""
+    json.dump(e, open(os.path.join(a.destino, "estilo.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+    tam = sum(os.path.getsize(os.path.join(r, f)) for r, _, fs in os.walk(a.destino) for f in fs) / 1e6
+    print(f"{a.destino}: estilo '{e['nombre']}' listo para subir a skills/clonar-carrusel/estilos/{e['id']} ({tam:.1f} MB)")
 
 
 ap = argparse.ArgumentParser(description="Biblioteca de estilos de carrusel")
@@ -355,7 +340,7 @@ sp.add_parser("listar")
 v = sp.add_parser("ver"); v.add_argument("nombre")
 c = sp.add_parser("catalogo"); c.add_argument("salida", nargs="?", default="catalogo_estilos.png")
 u = sp.add_parser("usar"); u.add_argument("nombre"); u.add_argument("destino")
-e_ = sp.add_parser("empaquetar"); e_.add_argument("salida", nargs="?", default="clonar-carrusel.zip")
+x = sp.add_parser("exportar"); x.add_argument("nombre"); x.add_argument("destino")
 a = ap.parse_args()
 {"guardar": guardar, "rendimiento": rendimiento, "ranking": ranking, "listar": listar, "ver": ver, "catalogo": catalogo,
- "usar": usar, "empaquetar": empaquetar}[a.cmd](a)
+ "usar": usar, "exportar": exportar}[a.cmd](a)

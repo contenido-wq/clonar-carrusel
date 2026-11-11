@@ -1,0 +1,12 @@
+{
+  "name": "jheitrujillob",
+  "description": "Skills de contenido de Jhei Trujillo (@jheitrujillob)",
+  "owner": { "name": "Jhei Trujillo" },
+  "plugins": [
+    {
+      "name": "clonar-carrusel",
+      "source": "./",
+      "description": "Modela carruseles virales de Instagram con tu marca. Trae 11 estilos listos y te deja guardar los tuyos."
+    }
+  ]
+}
